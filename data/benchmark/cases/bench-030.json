@@ -1,0 +1,336 @@
+{
+  "case_id": "bench-030",
+  "title": "Quantity and unit discipline — HDPE pipe 100 mm PN6",
+  "template": "quantity_units",
+  "variant": 30,
+  "seed": "case-v1:30",
+  "material_id": "hdpe-pipe",
+  "case_date": "2025-07-03",
+  "synthetic": true,
+  "tags": [
+    "quantity_shortfall",
+    "unit_trap"
+  ],
+  "documents": {
+    "rfq": "rfq.pdf",
+    "spec": "spec.pdf",
+    "policy": "policy.pdf",
+    "quote_0": "quote_cobalt_industries.pdf",
+    "certificates_0": "certificates_cobalt_industries.pdf",
+    "history_0": "history_cobalt_industries.pdf",
+    "quote_1": "quote_atlas_industries.pdf",
+    "certificates_1": "certificates_atlas_industries.pdf",
+    "history_1": "history_atlas_industries.pdf",
+    "quote_2": "quote_vulcan_engineering.pdf",
+    "certificates_2": "certificates_vulcan_engineering.pdf",
+    "history_2": "history_vulcan_engineering.pdf"
+  },
+  "authoring_requirements": [
+    {
+      "field": "material",
+      "operator": "eq",
+      "value": "HDPE",
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "material",
+      "source_doc": "spec"
+    },
+    {
+      "field": "quantity",
+      "operator": "gte",
+      "value": 4073.0,
+      "unit": "m",
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "quantity",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "price",
+      "operator": "lte",
+      "value": 1017200.0,
+      "unit": null,
+      "currency": "INR",
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_price",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "delivery_days",
+      "operator": "lte",
+      "value": 45.0,
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_delivery",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "certification",
+      "operator": "in",
+      "value": [
+        "ISO 9001:2015"
+      ],
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "certification",
+      "source_doc": "rfq"
+    }
+  ],
+  "authoring_suppliers": [
+    {
+      "supplier": "Cobalt Industries",
+      "outcome": "PASS",
+      "reason_categories": [],
+      "material": "HDPE",
+      "quantity": 4073.0,
+      "quantity_unit": "m",
+      "total_price": 935824.0,
+      "currency": "INR",
+      "delivery_days": 42,
+      "delivery_text": "within 42 days",
+      "payment_terms": "18 days net",
+      "bid_validity": 57,
+      "warranty_months": 12,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-06",
+          "expiry": "2027-07-03",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Atlas Industries",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "quantity_shortfall"
+      ],
+      "material": "HDPE",
+      "quantity": 2647.0,
+      "quantity_unit": "m",
+      "total_price": 712040.0,
+      "currency": "INR",
+      "delivery_days": 44,
+      "delivery_text": "within 44 days",
+      "payment_terms": "32 days net",
+      "bid_validity": 65,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-06",
+          "expiry": "2027-07-03",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 1
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Vulcan Engineering",
+      "outcome": "PASS",
+      "reason_categories": [
+        "unit_trap"
+      ],
+      "material": "HDPE",
+      "quantity": 4073.0,
+      "quantity_unit": "m",
+      "total_price": 966340.0,
+      "currency": "INR",
+      "delivery_days": 37,
+      "delivery_text": "within 37 days",
+      "payment_terms": "29 days net",
+      "bid_validity": 64,
+      "warranty_months": 12,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-06",
+          "expiry": "2027-07-03",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 2
+      },
+      "notes": ""
+    }
+  ],
+  "policy": {
+    "enabled": false,
+    "approval_threshold": null,
+    "mandatory_certs": [
+      "ISO 9001:2015"
+    ]
+  },
+  "ground_truth": {
+    "expected_recommendation": "Cobalt Industries",
+    "expected_status": "recommended",
+    "expected_outcomes": {
+      "Cobalt Industries": {
+        "status": "PASS",
+        "reasons": []
+      },
+      "Atlas Industries": {
+        "status": "FAIL",
+        "reasons": [
+          "quantity_shortfall"
+        ]
+      },
+      "Vulcan Engineering": {
+        "status": "PASS",
+        "reasons": [
+          "unit_trap"
+        ]
+      }
+    },
+    "expected_requirements": [
+      {
+        "field": "material",
+        "operator": "eq",
+        "value": "HDPE",
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "material",
+        "source_doc": "spec"
+      },
+      {
+        "field": "quantity",
+        "operator": "gte",
+        "value": 4073.0,
+        "unit": "m",
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "quantity",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "price",
+        "operator": "lte",
+        "value": 1017200.0,
+        "unit": null,
+        "currency": "INR",
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_price",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "delivery_days",
+        "operator": "lte",
+        "value": 45.0,
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_delivery",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "certification",
+        "operator": "in",
+        "value": [
+          "ISO 9001:2015"
+        ],
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "certification",
+        "source_doc": "rfq"
+      }
+    ],
+    "expected_evidence_fields": {
+      "Cobalt Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Atlas Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Vulcan Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ]
+    },
+    "expected_abstention": false
+  },
+  "retrieval_tasks": [
+    {
+      "id": "retr-bench-030-0",
+      "query": "Who quoted for HDPE pipe 100 mm PN6?",
+      "expected_doc_ids": [
+        "quote_cobalt_industries.pdf",
+        "quote_atlas_industries.pdf",
+        "quote_vulcan_engineering.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-030-1",
+      "query": "What is the required quantity?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-030-2",
+      "query": "What is the maximum budget?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-030-3",
+      "query": "Which certifications are mandatory?",
+      "expected_doc_ids": [
+        "rfq.pdf",
+        "policy.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-030-4",
+      "query": "Delivery commitment of Cobalt Industries",
+      "expected_doc_ids": [
+        "quote_cobalt_industries.pdf"
+      ]
+    }
+  ],
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ]
+}

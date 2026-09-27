@@ -1,0 +1,326 @@
+{
+  "case_id": "bench-019",
+  "title": "Certificate gauntlet — SS 316L seamless pipe",
+  "template": "certificate_gauntlet",
+  "variant": 19,
+  "seed": "case-v1:19",
+  "material_id": "ss316l-pipe",
+  "case_date": "2025-07-06",
+  "synthetic": true,
+  "tags": [
+    "expired_cert",
+    "missing_cert"
+  ],
+  "documents": {
+    "rfq": "rfq.pdf",
+    "spec": "spec.pdf",
+    "policy": "policy.pdf",
+    "quote_0": "quote_sterling_engineering.pdf",
+    "certificates_0": "certificates_sterling_engineering.pdf",
+    "history_0": "history_sterling_engineering.pdf",
+    "quote_1": "quote_zenith_engineering.pdf",
+    "certificates_1": "certificates_zenith_engineering.pdf",
+    "history_1": "history_zenith_engineering.pdf",
+    "quote_2": "quote_meridian_industries.pdf",
+    "history_2": "history_meridian_industries.pdf"
+  },
+  "authoring_requirements": [
+    {
+      "field": "material",
+      "operator": "eq",
+      "value": "SS 316L",
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "material",
+      "source_doc": "spec"
+    },
+    {
+      "field": "quantity",
+      "operator": "gte",
+      "value": 513.0,
+      "unit": "m",
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "quantity",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "price",
+      "operator": "lte",
+      "value": 1004200.0,
+      "unit": null,
+      "currency": "INR",
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_price",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "delivery_days",
+      "operator": "lte",
+      "value": 21.0,
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_delivery",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "certification",
+      "operator": "in",
+      "value": [
+        "ISO 14001:2015"
+      ],
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "certification",
+      "source_doc": "rfq"
+    }
+  ],
+  "authoring_suppliers": [
+    {
+      "supplier": "Sterling Engineering",
+      "outcome": "PASS",
+      "reason_categories": [],
+      "material": "SS 316L",
+      "quantity": 513.0,
+      "quantity_unit": "m",
+      "total_price": 953990.0,
+      "currency": "INR",
+      "delivery_days": 19,
+      "delivery_text": "within 19 days",
+      "payment_terms": "34 days net",
+      "bid_validity": 62,
+      "warranty_months": 12,
+      "certs": [
+        {
+          "name": "ISO 14001:2015",
+          "issue": "2024-09-09",
+          "expiry": "2027-07-06",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Zenith Engineering",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "expired_cert"
+      ],
+      "material": "SS 316L",
+      "quantity": 513.0,
+      "quantity_unit": "m",
+      "total_price": 853570.0,
+      "currency": "INR",
+      "delivery_days": 13,
+      "delivery_text": "within 13 days",
+      "payment_terms": "17 days net",
+      "bid_validity": 65,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 14001:2015",
+          "issue": "2024-09-09",
+          "expiry": "2025-05-22",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "plain",
+        "slot": 1
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Meridian Industries",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "missing_cert"
+      ],
+      "material": "SS 316L",
+      "quantity": 513.0,
+      "quantity_unit": "m",
+      "total_price": 622604.0,
+      "currency": "INR",
+      "delivery_days": 12,
+      "delivery_text": "within 12 days",
+      "payment_terms": "18 days net",
+      "bid_validity": 70,
+      "warranty_months": null,
+      "certs": [],
+      "formatting": {
+        "price_style": "indian",
+        "slot": 2
+      },
+      "notes": ""
+    }
+  ],
+  "policy": {
+    "enabled": false,
+    "approval_threshold": null,
+    "mandatory_certs": [
+      "ISO 14001:2015"
+    ]
+  },
+  "ground_truth": {
+    "expected_recommendation": "Sterling Engineering",
+    "expected_status": "recommended",
+    "expected_outcomes": {
+      "Sterling Engineering": {
+        "status": "PASS",
+        "reasons": []
+      },
+      "Zenith Engineering": {
+        "status": "FAIL",
+        "reasons": [
+          "expired_cert"
+        ]
+      },
+      "Meridian Industries": {
+        "status": "FAIL",
+        "reasons": [
+          "missing_cert"
+        ]
+      }
+    },
+    "expected_requirements": [
+      {
+        "field": "material",
+        "operator": "eq",
+        "value": "SS 316L",
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "material",
+        "source_doc": "spec"
+      },
+      {
+        "field": "quantity",
+        "operator": "gte",
+        "value": 513.0,
+        "unit": "m",
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "quantity",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "price",
+        "operator": "lte",
+        "value": 1004200.0,
+        "unit": null,
+        "currency": "INR",
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_price",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "delivery_days",
+        "operator": "lte",
+        "value": 21.0,
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_delivery",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "certification",
+        "operator": "in",
+        "value": [
+          "ISO 14001:2015"
+        ],
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "certification",
+        "source_doc": "rfq"
+      }
+    ],
+    "expected_evidence_fields": {
+      "Sterling Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Zenith Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Meridian Industries": [
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ]
+    },
+    "expected_abstention": false
+  },
+  "retrieval_tasks": [
+    {
+      "id": "retr-bench-019-0",
+      "query": "Who quoted for SS 316L seamless pipe?",
+      "expected_doc_ids": [
+        "quote_sterling_engineering.pdf",
+        "quote_zenith_engineering.pdf",
+        "quote_meridian_industries.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-019-1",
+      "query": "What is the required quantity?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-019-2",
+      "query": "What is the maximum budget?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-019-3",
+      "query": "Which certifications are mandatory?",
+      "expected_doc_ids": [
+        "rfq.pdf",
+        "policy.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-019-4",
+      "query": "Delivery commitment of Sterling Engineering",
+      "expected_doc_ids": [
+        "quote_sterling_engineering.pdf"
+      ]
+    }
+  ],
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ]
+}

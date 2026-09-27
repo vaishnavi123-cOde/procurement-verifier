@@ -1,0 +1,326 @@
+{
+  "case_id": "bench-021",
+  "title": "Certificate gauntlet — Carbon steel ERW pipe",
+  "template": "certificate_gauntlet",
+  "variant": 21,
+  "seed": "case-v1:21",
+  "material_id": "cs-pipe",
+  "case_date": "2025-07-12",
+  "synthetic": true,
+  "tags": [
+    "expired_cert",
+    "missing_cert"
+  ],
+  "documents": {
+    "rfq": "rfq.pdf",
+    "spec": "spec.pdf",
+    "policy": "policy.pdf",
+    "quote_0": "quote_atlas_engineering.pdf",
+    "certificates_0": "certificates_atlas_engineering.pdf",
+    "history_0": "history_atlas_engineering.pdf",
+    "quote_1": "quote_prism_industries.pdf",
+    "certificates_1": "certificates_prism_industries.pdf",
+    "history_1": "history_prism_industries.pdf",
+    "quote_2": "quote_orion_industries.pdf",
+    "history_2": "history_orion_industries.pdf"
+  },
+  "authoring_requirements": [
+    {
+      "field": "material",
+      "operator": "eq",
+      "value": "CS",
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "material",
+      "source_doc": "spec"
+    },
+    {
+      "field": "quantity",
+      "operator": "gte",
+      "value": 3500.0,
+      "unit": "m",
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "quantity",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "price",
+      "operator": "lte",
+      "value": 1512000.0,
+      "unit": null,
+      "currency": "INR",
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_price",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "delivery_days",
+      "operator": "lte",
+      "value": 21.0,
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_delivery",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "certification",
+      "operator": "in",
+      "value": [
+        "ISO 9001:2015"
+      ],
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "certification",
+      "source_doc": "rfq"
+    }
+  ],
+  "authoring_suppliers": [
+    {
+      "supplier": "Atlas Engineering",
+      "outcome": "PASS",
+      "reason_categories": [],
+      "material": "CS",
+      "quantity": 3500.0,
+      "quantity_unit": "m",
+      "total_price": 1436400.0,
+      "currency": "INR",
+      "delivery_days": 12,
+      "delivery_text": "within 12 days",
+      "payment_terms": "24 days net",
+      "bid_validity": 50,
+      "warranty_months": 12,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-15",
+          "expiry": "2027-07-12",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "plain",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Prism Industries",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "expired_cert"
+      ],
+      "material": "CS",
+      "quantity": 3500.0,
+      "quantity_unit": "m",
+      "total_price": 1285200.0,
+      "currency": "INR",
+      "delivery_days": 17,
+      "delivery_text": "within 17 days",
+      "payment_terms": "33 days net",
+      "bid_validity": 50,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-15",
+          "expiry": "2025-05-28",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 1
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Orion Industries",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "missing_cert"
+      ],
+      "material": "CS",
+      "quantity": 3500.0,
+      "quantity_unit": "m",
+      "total_price": 937440.0,
+      "currency": "INR",
+      "delivery_days": 16,
+      "delivery_text": "within 16 days",
+      "payment_terms": "22 days net",
+      "bid_validity": 50,
+      "warranty_months": null,
+      "certs": [],
+      "formatting": {
+        "price_style": "indian",
+        "slot": 2
+      },
+      "notes": ""
+    }
+  ],
+  "policy": {
+    "enabled": false,
+    "approval_threshold": null,
+    "mandatory_certs": [
+      "ISO 9001:2015"
+    ]
+  },
+  "ground_truth": {
+    "expected_recommendation": "Atlas Engineering",
+    "expected_status": "recommended",
+    "expected_outcomes": {
+      "Atlas Engineering": {
+        "status": "PASS",
+        "reasons": []
+      },
+      "Prism Industries": {
+        "status": "FAIL",
+        "reasons": [
+          "expired_cert"
+        ]
+      },
+      "Orion Industries": {
+        "status": "FAIL",
+        "reasons": [
+          "missing_cert"
+        ]
+      }
+    },
+    "expected_requirements": [
+      {
+        "field": "material",
+        "operator": "eq",
+        "value": "CS",
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "material",
+        "source_doc": "spec"
+      },
+      {
+        "field": "quantity",
+        "operator": "gte",
+        "value": 3500.0,
+        "unit": "m",
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "quantity",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "price",
+        "operator": "lte",
+        "value": 1512000.0,
+        "unit": null,
+        "currency": "INR",
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_price",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "delivery_days",
+        "operator": "lte",
+        "value": 21.0,
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_delivery",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "certification",
+        "operator": "in",
+        "value": [
+          "ISO 9001:2015"
+        ],
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "certification",
+        "source_doc": "rfq"
+      }
+    ],
+    "expected_evidence_fields": {
+      "Atlas Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Prism Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Orion Industries": [
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ]
+    },
+    "expected_abstention": false
+  },
+  "retrieval_tasks": [
+    {
+      "id": "retr-bench-021-0",
+      "query": "Who quoted for Carbon steel ERW pipe?",
+      "expected_doc_ids": [
+        "quote_atlas_engineering.pdf",
+        "quote_prism_industries.pdf",
+        "quote_orion_industries.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-021-1",
+      "query": "What is the required quantity?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-021-2",
+      "query": "What is the maximum budget?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-021-3",
+      "query": "Which certifications are mandatory?",
+      "expected_doc_ids": [
+        "rfq.pdf",
+        "policy.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-021-4",
+      "query": "Delivery commitment of Atlas Engineering",
+      "expected_doc_ids": [
+        "quote_atlas_engineering.pdf"
+      ]
+    }
+  ],
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ]
+}

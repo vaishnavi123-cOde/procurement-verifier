@@ -1,0 +1,5 @@
+# Optional heavy dependencies (torch-based local embedding models).
+# Install only if you want to use a local transformer embedding model:
+#   pip install -r requirements-optional.txt
+# Default embeddings use Ollama; fallback is a deterministic hash embedding.
+sentence-transformers>=3.0

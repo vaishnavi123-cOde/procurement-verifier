@@ -1,0 +1,332 @@
+{
+  "case_id": "bench-033",
+  "title": "Foreign currency pricing — Brass gate valve DN50",
+  "template": "currency_fx",
+  "variant": 33,
+  "seed": "case-v1:33",
+  "material_id": "brass-valve",
+  "case_date": "2025-07-12",
+  "synthetic": true,
+  "tags": [
+    "currency_fx",
+    "price_ok_foreign",
+    "price_over_foreign",
+    "missing_cert"
+  ],
+  "documents": {
+    "rfq": "rfq.pdf",
+    "spec": "spec.pdf",
+    "policy": "policy.pdf",
+    "quote_0": "quote_meridian_engineering.pdf",
+    "certificates_0": "certificates_meridian_engineering.pdf",
+    "history_0": "history_meridian_engineering.pdf",
+    "quote_1": "quote_quantum_engineering.pdf",
+    "certificates_1": "certificates_quantum_engineering.pdf",
+    "history_1": "history_quantum_engineering.pdf",
+    "quote_2": "quote_ridge_engineering.pdf",
+    "history_2": "history_ridge_engineering.pdf"
+  },
+  "authoring_requirements": [
+    {
+      "field": "material",
+      "operator": "eq",
+      "value": "Brass",
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "material",
+      "source_doc": "spec"
+    },
+    {
+      "field": "quantity",
+      "operator": "gte",
+      "value": 123.0,
+      "unit": "unit",
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "quantity",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "price",
+      "operator": "lte",
+      "value": 207600.0,
+      "unit": null,
+      "currency": "INR",
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_price",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "delivery_days",
+      "operator": "lte",
+      "value": 45.0,
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_delivery",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "certification",
+      "operator": "in",
+      "value": [
+        "ISO 9001:2015"
+      ],
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "certification",
+      "source_doc": "rfq"
+    }
+  ],
+  "authoring_suppliers": [
+    {
+      "supplier": "Meridian Engineering",
+      "outcome": "PASS",
+      "reason_categories": [
+        "price_ok_foreign"
+      ],
+      "material": "Brass",
+      "quantity": 123.0,
+      "quantity_unit": "unit",
+      "total_price": 2347.86,
+      "currency": "USD",
+      "delivery_days": 39,
+      "delivery_text": "within 39 days",
+      "payment_terms": "40 days net",
+      "bid_validity": 54,
+      "warranty_months": 12,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-15",
+          "expiry": "2027-07-12",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "plain",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Quantum Engineering",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "price_over_foreign"
+      ],
+      "material": "Brass",
+      "quantity": 123.0,
+      "quantity_unit": "unit",
+      "total_price": 3460.0,
+      "currency": "USD",
+      "delivery_days": 43,
+      "delivery_text": "within 43 days",
+      "payment_terms": "30 days net",
+      "bid_validity": 68,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-15",
+          "expiry": "2027-07-12",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "plain",
+        "slot": 1
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Ridge Engineering",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "missing_cert"
+      ],
+      "material": "Brass",
+      "quantity": 123.0,
+      "quantity_unit": "unit",
+      "total_price": 145320.0,
+      "currency": "INR",
+      "delivery_days": 41,
+      "delivery_text": "within 41 days",
+      "payment_terms": "28 days net",
+      "bid_validity": 70,
+      "warranty_months": null,
+      "certs": [],
+      "formatting": {
+        "price_style": "indian",
+        "slot": 2
+      },
+      "notes": ""
+    }
+  ],
+  "policy": {
+    "enabled": false,
+    "approval_threshold": null,
+    "mandatory_certs": [
+      "ISO 9001:2015"
+    ]
+  },
+  "ground_truth": {
+    "expected_recommendation": "Meridian Engineering",
+    "expected_status": "recommended",
+    "expected_outcomes": {
+      "Meridian Engineering": {
+        "status": "PASS",
+        "reasons": [
+          "price_ok_foreign"
+        ]
+      },
+      "Quantum Engineering": {
+        "status": "FAIL",
+        "reasons": [
+          "price_over_foreign"
+        ]
+      },
+      "Ridge Engineering": {
+        "status": "FAIL",
+        "reasons": [
+          "missing_cert"
+        ]
+      }
+    },
+    "expected_requirements": [
+      {
+        "field": "material",
+        "operator": "eq",
+        "value": "Brass",
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "material",
+        "source_doc": "spec"
+      },
+      {
+        "field": "quantity",
+        "operator": "gte",
+        "value": 123.0,
+        "unit": "unit",
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "quantity",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "price",
+        "operator": "lte",
+        "value": 207600.0,
+        "unit": null,
+        "currency": "INR",
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_price",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "delivery_days",
+        "operator": "lte",
+        "value": 45.0,
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_delivery",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "certification",
+        "operator": "in",
+        "value": [
+          "ISO 9001:2015"
+        ],
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "certification",
+        "source_doc": "rfq"
+      }
+    ],
+    "expected_evidence_fields": {
+      "Meridian Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Quantum Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Ridge Engineering": [
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ]
+    },
+    "expected_abstention": false
+  },
+  "retrieval_tasks": [
+    {
+      "id": "retr-bench-033-0",
+      "query": "Who quoted for Brass gate valve DN50?",
+      "expected_doc_ids": [
+        "quote_meridian_engineering.pdf",
+        "quote_quantum_engineering.pdf",
+        "quote_ridge_engineering.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-033-1",
+      "query": "What is the required quantity?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-033-2",
+      "query": "What is the maximum budget?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-033-3",
+      "query": "Which certifications are mandatory?",
+      "expected_doc_ids": [
+        "rfq.pdf",
+        "policy.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-033-4",
+      "query": "Delivery commitment of Meridian Engineering",
+      "expected_doc_ids": [
+        "quote_meridian_engineering.pdf"
+      ]
+    }
+  ],
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ]
+}

@@ -1,0 +1,330 @@
+{
+  "case_id": "bench-048",
+  "title": "Withhold recommendation — HDPE pipe 100 mm PN6",
+  "template": "abstention",
+  "variant": 48,
+  "seed": "case-v1:48",
+  "material_id": "hdpe-pipe",
+  "case_date": "2025-06-15",
+  "synthetic": true,
+  "tags": [
+    "abstention",
+    "no_valid"
+  ],
+  "documents": {
+    "rfq": "rfq.pdf",
+    "spec": "spec.pdf",
+    "policy": "policy.pdf",
+    "quote_0": "quote_prism_engineering.pdf",
+    "certificates_0": "certificates_prism_engineering.pdf",
+    "history_0": "history_prism_engineering.pdf",
+    "quote_1": "quote_orion_engineering.pdf",
+    "history_1": "history_orion_engineering.pdf",
+    "quote_2": "quote_apex_industries.pdf",
+    "certificates_2": "certificates_apex_industries.pdf",
+    "history_2": "history_apex_industries.pdf"
+  },
+  "authoring_requirements": [
+    {
+      "field": "material",
+      "operator": "eq",
+      "value": "HDPE",
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "material",
+      "source_doc": "spec"
+    },
+    {
+      "field": "quantity",
+      "operator": "gte",
+      "value": 996.0,
+      "unit": "m",
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "quantity",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "price",
+      "operator": "lte",
+      "value": 248800.0,
+      "unit": null,
+      "currency": "INR",
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_price",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "delivery_days",
+      "operator": "lte",
+      "value": 45.0,
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_delivery",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "certification",
+      "operator": "in",
+      "value": [
+        "ISO 9001:2015"
+      ],
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "certification",
+      "source_doc": "rfq"
+    }
+  ],
+  "authoring_suppliers": [
+    {
+      "supplier": "Prism Engineering",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "price_over"
+      ],
+      "material": "HDPE",
+      "quantity": 996.0,
+      "quantity_unit": "m",
+      "total_price": 398080.0,
+      "currency": "INR",
+      "delivery_days": 36,
+      "delivery_text": "within 36 days",
+      "payment_terms": "38 days net",
+      "bid_validity": 53,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-08-19",
+          "expiry": "2027-06-15",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "indian",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Orion Engineering",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "missing_cert"
+      ],
+      "material": "HDPE",
+      "quantity": 996.0,
+      "quantity_unit": "m",
+      "total_price": 161720.0,
+      "currency": "INR",
+      "delivery_days": 44,
+      "delivery_text": "within 44 days",
+      "payment_terms": "19 days net",
+      "bid_validity": 68,
+      "warranty_months": null,
+      "certs": [],
+      "formatting": {
+        "price_style": "indian",
+        "slot": 1
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Apex Industries",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "material_mismatch"
+      ],
+      "material": "MS",
+      "quantity": 996.0,
+      "quantity_unit": "m",
+      "total_price": 136840.0,
+      "currency": "INR",
+      "delivery_days": 44,
+      "delivery_text": "within 44 days",
+      "payment_terms": "39 days net",
+      "bid_validity": 72,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-08-19",
+          "expiry": "2027-06-15",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "indian",
+        "slot": 2
+      },
+      "notes": ""
+    }
+  ],
+  "policy": {
+    "enabled": false,
+    "approval_threshold": null,
+    "mandatory_certs": [
+      "ISO 9001:2015"
+    ]
+  },
+  "ground_truth": {
+    "expected_recommendation": null,
+    "expected_status": "no_valid",
+    "expected_outcomes": {
+      "Prism Engineering": {
+        "status": "FAIL",
+        "reasons": [
+          "price_over"
+        ]
+      },
+      "Orion Engineering": {
+        "status": "FAIL",
+        "reasons": [
+          "missing_cert"
+        ]
+      },
+      "Apex Industries": {
+        "status": "FAIL",
+        "reasons": [
+          "material_mismatch"
+        ]
+      }
+    },
+    "expected_requirements": [
+      {
+        "field": "material",
+        "operator": "eq",
+        "value": "HDPE",
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "material",
+        "source_doc": "spec"
+      },
+      {
+        "field": "quantity",
+        "operator": "gte",
+        "value": 996.0,
+        "unit": "m",
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "quantity",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "price",
+        "operator": "lte",
+        "value": 248800.0,
+        "unit": null,
+        "currency": "INR",
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_price",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "delivery_days",
+        "operator": "lte",
+        "value": 45.0,
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_delivery",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "certification",
+        "operator": "in",
+        "value": [
+          "ISO 9001:2015"
+        ],
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "certification",
+        "source_doc": "rfq"
+      }
+    ],
+    "expected_evidence_fields": {
+      "Prism Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Orion Engineering": [
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Apex Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ]
+    },
+    "expected_abstention": true
+  },
+  "retrieval_tasks": [
+    {
+      "id": "retr-bench-048-0",
+      "query": "Who quoted for HDPE pipe 100 mm PN6?",
+      "expected_doc_ids": [
+        "quote_prism_engineering.pdf",
+        "quote_orion_engineering.pdf",
+        "quote_apex_industries.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-048-1",
+      "query": "What is the required quantity?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-048-2",
+      "query": "What is the maximum budget?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-048-3",
+      "query": "Which certifications are mandatory?",
+      "expected_doc_ids": [
+        "rfq.pdf",
+        "policy.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-048-4",
+      "query": "Delivery commitment of Prism Engineering",
+      "expected_doc_ids": [
+        "quote_prism_engineering.pdf"
+      ]
+    }
+  ],
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ]
+}

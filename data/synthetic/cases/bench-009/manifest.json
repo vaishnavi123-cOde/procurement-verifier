@@ -1,0 +1,336 @@
+{
+  "case_id": "bench-009",
+  "title": "Compliance shortlist — Mild steel plate",
+  "template": "compliance",
+  "variant": 9,
+  "seed": "case-v1:9",
+  "material_id": "ms-plate",
+  "case_date": "2025-07-12",
+  "synthetic": true,
+  "tags": [
+    "material_mismatch",
+    "price_over"
+  ],
+  "documents": {
+    "rfq": "rfq.pdf",
+    "spec": "spec.pdf",
+    "policy": "policy.pdf",
+    "quote_0": "quote_vega_industries.pdf",
+    "certificates_0": "certificates_vega_industries.pdf",
+    "history_0": "history_vega_industries.pdf",
+    "quote_1": "quote_ironwood_industries.pdf",
+    "certificates_1": "certificates_ironwood_industries.pdf",
+    "history_1": "history_ironwood_industries.pdf",
+    "quote_2": "quote_sterling_engineering.pdf",
+    "certificates_2": "certificates_sterling_engineering.pdf",
+    "history_2": "history_sterling_engineering.pdf"
+  },
+  "authoring_requirements": [
+    {
+      "field": "material",
+      "operator": "eq",
+      "value": "MS",
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "material",
+      "source_doc": "spec"
+    },
+    {
+      "field": "quantity",
+      "operator": "gte",
+      "value": 4241.0,
+      "unit": "kg",
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "quantity",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "price",
+      "operator": "lte",
+      "value": 332100.0,
+      "unit": null,
+      "currency": "INR",
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_price",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "delivery_days",
+      "operator": "lte",
+      "value": 21.0,
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_delivery",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "certification",
+      "operator": "in",
+      "value": [
+        "ISO 9001:2015"
+      ],
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "certification",
+      "source_doc": "rfq"
+    }
+  ],
+  "authoring_suppliers": [
+    {
+      "supplier": "Vega Industries",
+      "outcome": "PASS",
+      "reason_categories": [],
+      "material": "MS",
+      "quantity": 4241.0,
+      "quantity_unit": "kg",
+      "total_price": 298890.0,
+      "currency": "INR",
+      "delivery_days": 20,
+      "delivery_text": "within 20 days",
+      "payment_terms": "19 days net",
+      "bid_validity": 67,
+      "warranty_months": 12,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-15",
+          "expiry": "2027-07-12",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Ironwood Industries",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "price_over"
+      ],
+      "material": "MS",
+      "quantity": 4241.0,
+      "quantity_unit": "kg",
+      "total_price": 464940.0,
+      "currency": "INR",
+      "delivery_days": 16,
+      "delivery_text": "within 16 days",
+      "payment_terms": "44 days net",
+      "bid_validity": 69,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-15",
+          "expiry": "2027-07-12",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Sterling Engineering",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "material_mismatch"
+      ],
+      "material": "CS",
+      "quantity": 4241.0,
+      "quantity_unit": "kg",
+      "total_price": 249075.0,
+      "currency": "INR",
+      "delivery_days": 14,
+      "delivery_text": "within 14 days",
+      "payment_terms": "34 days net",
+      "bid_validity": 62,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-15",
+          "expiry": "2027-07-12",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "indian",
+        "slot": 0
+      },
+      "notes": ""
+    }
+  ],
+  "policy": {
+    "enabled": false,
+    "approval_threshold": null,
+    "mandatory_certs": [
+      "ISO 9001:2015"
+    ]
+  },
+  "ground_truth": {
+    "expected_recommendation": "Vega Industries",
+    "expected_status": "recommended",
+    "expected_outcomes": {
+      "Vega Industries": {
+        "status": "PASS",
+        "reasons": []
+      },
+      "Ironwood Industries": {
+        "status": "FAIL",
+        "reasons": [
+          "price_over"
+        ]
+      },
+      "Sterling Engineering": {
+        "status": "FAIL",
+        "reasons": [
+          "material_mismatch"
+        ]
+      }
+    },
+    "expected_requirements": [
+      {
+        "field": "material",
+        "operator": "eq",
+        "value": "MS",
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "material",
+        "source_doc": "spec"
+      },
+      {
+        "field": "quantity",
+        "operator": "gte",
+        "value": 4241.0,
+        "unit": "kg",
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "quantity",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "price",
+        "operator": "lte",
+        "value": 332100.0,
+        "unit": null,
+        "currency": "INR",
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_price",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "delivery_days",
+        "operator": "lte",
+        "value": 21.0,
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_delivery",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "certification",
+        "operator": "in",
+        "value": [
+          "ISO 9001:2015"
+        ],
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "certification",
+        "source_doc": "rfq"
+      }
+    ],
+    "expected_evidence_fields": {
+      "Vega Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Ironwood Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Sterling Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ]
+    },
+    "expected_abstention": false
+  },
+  "retrieval_tasks": [
+    {
+      "id": "retr-bench-009-0",
+      "query": "Who quoted for Mild steel plate?",
+      "expected_doc_ids": [
+        "quote_vega_industries.pdf",
+        "quote_ironwood_industries.pdf",
+        "quote_sterling_engineering.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-009-1",
+      "query": "What is the required quantity?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-009-2",
+      "query": "What is the maximum budget?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-009-3",
+      "query": "Which certifications are mandatory?",
+      "expected_doc_ids": [
+        "rfq.pdf",
+        "policy.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-009-4",
+      "query": "Delivery commitment of Vega Industries",
+      "expected_doc_ids": [
+        "quote_vega_industries.pdf"
+      ]
+    }
+  ],
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ]
+}

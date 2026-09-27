@@ -1,0 +1,336 @@
+{
+  "case_id": "bench-022",
+  "title": "Quantity and unit discipline — Brass gate valve DN50",
+  "template": "quantity_units",
+  "variant": 22,
+  "seed": "case-v1:22",
+  "material_id": "brass-valve",
+  "case_date": "2025-07-15",
+  "synthetic": true,
+  "tags": [
+    "quantity_shortfall",
+    "unit_trap"
+  ],
+  "documents": {
+    "rfq": "rfq.pdf",
+    "spec": "spec.pdf",
+    "policy": "policy.pdf",
+    "quote_0": "quote_apex_industries.pdf",
+    "certificates_0": "certificates_apex_industries.pdf",
+    "history_0": "history_apex_industries.pdf",
+    "quote_1": "quote_vega_industries.pdf",
+    "certificates_1": "certificates_vega_industries.pdf",
+    "history_1": "history_vega_industries.pdf",
+    "quote_2": "quote_ironwood_industries.pdf",
+    "certificates_2": "certificates_ironwood_industries.pdf",
+    "history_2": "history_ironwood_industries.pdf"
+  },
+  "authoring_requirements": [
+    {
+      "field": "material",
+      "operator": "eq",
+      "value": "Brass",
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "material",
+      "source_doc": "spec"
+    },
+    {
+      "field": "quantity",
+      "operator": "gte",
+      "value": 296.0,
+      "unit": "unit",
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "quantity",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "price",
+      "operator": "lte",
+      "value": 499500.0,
+      "unit": null,
+      "currency": "INR",
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_price",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "delivery_days",
+      "operator": "lte",
+      "value": 30.0,
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_delivery",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "certification",
+      "operator": "in",
+      "value": [
+        "ISO 9001:2015"
+      ],
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "certification",
+      "source_doc": "rfq"
+    }
+  ],
+  "authoring_suppliers": [
+    {
+      "supplier": "Apex Industries",
+      "outcome": "PASS",
+      "reason_categories": [],
+      "material": "Brass",
+      "quantity": 296.0,
+      "quantity_unit": "unit",
+      "total_price": 459540.0,
+      "currency": "INR",
+      "delivery_days": 25,
+      "delivery_text": "within 25 days",
+      "payment_terms": "39 days net",
+      "bid_validity": 72,
+      "warranty_months": 12,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-18",
+          "expiry": "2027-07-15",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Vega Industries",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "quantity_shortfall"
+      ],
+      "material": "Brass",
+      "quantity": 192.0,
+      "quantity_unit": "unit",
+      "total_price": 349650.0,
+      "currency": "INR",
+      "delivery_days": 27,
+      "delivery_text": "within 27 days",
+      "payment_terms": "19 days net",
+      "bid_validity": 67,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-18",
+          "expiry": "2027-07-15",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "plain",
+        "slot": 1
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Ironwood Industries",
+      "outcome": "PASS",
+      "reason_categories": [
+        "unit_trap"
+      ],
+      "material": "Brass",
+      "quantity": 296.0,
+      "quantity_unit": "unit",
+      "total_price": 474525.0,
+      "currency": "INR",
+      "delivery_days": 24,
+      "delivery_text": "within 24 days",
+      "payment_terms": "44 days net",
+      "bid_validity": 69,
+      "warranty_months": 12,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-18",
+          "expiry": "2027-07-15",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "indian",
+        "slot": 2
+      },
+      "notes": ""
+    }
+  ],
+  "policy": {
+    "enabled": false,
+    "approval_threshold": null,
+    "mandatory_certs": [
+      "ISO 9001:2015"
+    ]
+  },
+  "ground_truth": {
+    "expected_recommendation": "Apex Industries",
+    "expected_status": "recommended",
+    "expected_outcomes": {
+      "Apex Industries": {
+        "status": "PASS",
+        "reasons": []
+      },
+      "Vega Industries": {
+        "status": "FAIL",
+        "reasons": [
+          "quantity_shortfall"
+        ]
+      },
+      "Ironwood Industries": {
+        "status": "PASS",
+        "reasons": [
+          "unit_trap"
+        ]
+      }
+    },
+    "expected_requirements": [
+      {
+        "field": "material",
+        "operator": "eq",
+        "value": "Brass",
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "material",
+        "source_doc": "spec"
+      },
+      {
+        "field": "quantity",
+        "operator": "gte",
+        "value": 296.0,
+        "unit": "unit",
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "quantity",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "price",
+        "operator": "lte",
+        "value": 499500.0,
+        "unit": null,
+        "currency": "INR",
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_price",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "delivery_days",
+        "operator": "lte",
+        "value": 30.0,
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_delivery",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "certification",
+        "operator": "in",
+        "value": [
+          "ISO 9001:2015"
+        ],
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "certification",
+        "source_doc": "rfq"
+      }
+    ],
+    "expected_evidence_fields": {
+      "Apex Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Vega Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Ironwood Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ]
+    },
+    "expected_abstention": false
+  },
+  "retrieval_tasks": [
+    {
+      "id": "retr-bench-022-0",
+      "query": "Who quoted for Brass gate valve DN50?",
+      "expected_doc_ids": [
+        "quote_apex_industries.pdf",
+        "quote_vega_industries.pdf",
+        "quote_ironwood_industries.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-022-1",
+      "query": "What is the required quantity?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-022-2",
+      "query": "What is the maximum budget?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-022-3",
+      "query": "Which certifications are mandatory?",
+      "expected_doc_ids": [
+        "rfq.pdf",
+        "policy.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-022-4",
+      "query": "Delivery commitment of Apex Industries",
+      "expected_doc_ids": [
+        "quote_apex_industries.pdf"
+      ]
+    }
+  ],
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ]
+}

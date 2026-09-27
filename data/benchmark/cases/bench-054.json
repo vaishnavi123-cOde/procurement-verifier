@@ -1,0 +1,332 @@
+{
+  "case_id": "bench-054",
+  "title": "Among compliant bidders — EN8 bright round bar",
+  "template": "dual_compliant",
+  "variant": 54,
+  "seed": "case-v1:54",
+  "material_id": "en8-bar",
+  "case_date": "2025-07-03",
+  "synthetic": true,
+  "tags": [
+    "dual_compliant",
+    "expired_cert"
+  ],
+  "documents": {
+    "rfq": "rfq.pdf",
+    "spec": "spec.pdf",
+    "policy": "policy.pdf",
+    "quote_0": "quote_pioneer_industries.pdf",
+    "certificates_0": "certificates_pioneer_industries.pdf",
+    "history_0": "history_pioneer_industries.pdf",
+    "quote_1": "quote_harbinger_engineering.pdf",
+    "certificates_1": "certificates_harbinger_engineering.pdf",
+    "history_1": "history_harbinger_engineering.pdf",
+    "quote_2": "quote_falcon_engineering.pdf",
+    "certificates_2": "certificates_falcon_engineering.pdf",
+    "history_2": "history_falcon_engineering.pdf"
+  },
+  "authoring_requirements": [
+    {
+      "field": "material",
+      "operator": "eq",
+      "value": "EN 8",
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "material",
+      "source_doc": "spec"
+    },
+    {
+      "field": "quantity",
+      "operator": "gte",
+      "value": 1829.0,
+      "unit": "kg",
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "quantity",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "price",
+      "operator": "lte",
+      "value": 153100.0,
+      "unit": null,
+      "currency": "INR",
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_price",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "delivery_days",
+      "operator": "lte",
+      "value": 30.0,
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_delivery",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "certification",
+      "operator": "in",
+      "value": [
+        "ISO 9001:2015"
+      ],
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "certification",
+      "source_doc": "rfq"
+    }
+  ],
+  "authoring_suppliers": [
+    {
+      "supplier": "Pioneer Industries",
+      "outcome": "PASS",
+      "reason_categories": [],
+      "material": "EN 8",
+      "quantity": 1829.0,
+      "quantity_unit": "kg",
+      "total_price": 137790.0,
+      "currency": "INR",
+      "delivery_days": 22,
+      "delivery_text": "within 22 days",
+      "payment_terms": "25 days net",
+      "bid_validity": 63,
+      "warranty_months": 12,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-06",
+          "expiry": "2027-07-03",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "plain",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Harbinger Engineering",
+      "outcome": "PASS",
+      "reason_categories": [],
+      "material": "EN 8",
+      "quantity": 1829.0,
+      "quantity_unit": "kg",
+      "total_price": 150038.0,
+      "currency": "INR",
+      "delivery_days": 27,
+      "delivery_text": "within 27 days",
+      "payment_terms": "44 days net",
+      "bid_validity": 62,
+      "warranty_months": 12,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-06",
+          "expiry": "2027-07-03",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "plain",
+        "slot": 1
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Falcon Engineering",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "expired_cert"
+      ],
+      "material": "EN 8",
+      "quantity": 1829.0,
+      "quantity_unit": "kg",
+      "total_price": 122480.0,
+      "currency": "INR",
+      "delivery_days": 28,
+      "delivery_text": "within 28 days",
+      "payment_terms": "38 days net",
+      "bid_validity": 55,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-06",
+          "expiry": "2025-05-19",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "indian",
+        "slot": 2
+      },
+      "notes": ""
+    }
+  ],
+  "policy": {
+    "enabled": false,
+    "approval_threshold": null,
+    "mandatory_certs": [
+      "ISO 9001:2015"
+    ]
+  },
+  "ground_truth": {
+    "expected_recommendation": "Pioneer Industries",
+    "expected_status": "recommended",
+    "expected_outcomes": {
+      "Pioneer Industries": {
+        "status": "PASS",
+        "reasons": []
+      },
+      "Harbinger Engineering": {
+        "status": "PASS",
+        "reasons": []
+      },
+      "Falcon Engineering": {
+        "status": "FAIL",
+        "reasons": [
+          "expired_cert"
+        ]
+      }
+    },
+    "expected_requirements": [
+      {
+        "field": "material",
+        "operator": "eq",
+        "value": "EN 8",
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "material",
+        "source_doc": "spec"
+      },
+      {
+        "field": "quantity",
+        "operator": "gte",
+        "value": 1829.0,
+        "unit": "kg",
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "quantity",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "price",
+        "operator": "lte",
+        "value": 153100.0,
+        "unit": null,
+        "currency": "INR",
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_price",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "delivery_days",
+        "operator": "lte",
+        "value": 30.0,
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_delivery",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "certification",
+        "operator": "in",
+        "value": [
+          "ISO 9001:2015"
+        ],
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "certification",
+        "source_doc": "rfq"
+      }
+    ],
+    "expected_evidence_fields": {
+      "Pioneer Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Harbinger Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Falcon Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ]
+    },
+    "expected_abstention": false
+  },
+  "retrieval_tasks": [
+    {
+      "id": "retr-bench-054-0",
+      "query": "Who quoted for EN8 bright round bar?",
+      "expected_doc_ids": [
+        "quote_pioneer_industries.pdf",
+        "quote_harbinger_engineering.pdf",
+        "quote_falcon_engineering.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-054-1",
+      "query": "What is the required quantity?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-054-2",
+      "query": "What is the maximum budget?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-054-3",
+      "query": "Which certifications are mandatory?",
+      "expected_doc_ids": [
+        "rfq.pdf",
+        "policy.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-054-4",
+      "query": "Delivery commitment of Pioneer Industries",
+      "expected_doc_ids": [
+        "quote_pioneer_industries.pdf"
+      ]
+    }
+  ],
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ]
+}

@@ -1,0 +1,336 @@
+{
+  "case_id": "bench-029",
+  "title": "Quantity and unit discipline — Aluminium 6061 T6 bar",
+  "template": "quantity_units",
+  "variant": 29,
+  "seed": "case-v1:29",
+  "material_id": "al6061-bar",
+  "case_date": "2025-06-30",
+  "synthetic": true,
+  "tags": [
+    "quantity_shortfall",
+    "unit_trap"
+  ],
+  "documents": {
+    "rfq": "rfq.pdf",
+    "spec": "spec.pdf",
+    "policy": "policy.pdf",
+    "quote_0": "quote_meridian_industries.pdf",
+    "certificates_0": "certificates_meridian_industries.pdf",
+    "history_0": "history_meridian_industries.pdf",
+    "quote_1": "quote_quantum_industries.pdf",
+    "certificates_1": "certificates_quantum_industries.pdf",
+    "history_1": "history_quantum_industries.pdf",
+    "quote_2": "quote_ridge_industries.pdf",
+    "certificates_2": "certificates_ridge_industries.pdf",
+    "history_2": "history_ridge_industries.pdf"
+  },
+  "authoring_requirements": [
+    {
+      "field": "material",
+      "operator": "eq",
+      "value": "AL 6061",
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "material",
+      "source_doc": "spec"
+    },
+    {
+      "field": "quantity",
+      "operator": "gte",
+      "value": 3597.0,
+      "unit": "kg",
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "quantity",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "price",
+      "operator": "lte",
+      "value": 1408200.0,
+      "unit": null,
+      "currency": "INR",
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_price",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "delivery_days",
+      "operator": "lte",
+      "value": 45.0,
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_delivery",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "certification",
+      "operator": "in",
+      "value": [
+        "ISO 9001:2015"
+      ],
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "certification",
+      "source_doc": "rfq"
+    }
+  ],
+  "authoring_suppliers": [
+    {
+      "supplier": "Meridian Industries",
+      "outcome": "PASS",
+      "reason_categories": [],
+      "material": "AL 6061",
+      "quantity": 3597.0,
+      "quantity_unit": "kg",
+      "total_price": 1295544.0,
+      "currency": "INR",
+      "delivery_days": 37,
+      "delivery_text": "within 37 days",
+      "payment_terms": "18 days net",
+      "bid_validity": 70,
+      "warranty_months": 12,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-03",
+          "expiry": "2027-06-30",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "plain",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Quantum Industries",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "quantity_shortfall"
+      ],
+      "material": "AL 6061",
+      "quantity": 2338.0,
+      "quantity_unit": "kg",
+      "total_price": 985740.0,
+      "currency": "INR",
+      "delivery_days": 43,
+      "delivery_text": "within 43 days",
+      "payment_terms": "22 days net",
+      "bid_validity": 63,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-03",
+          "expiry": "2027-06-30",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "plain",
+        "slot": 1
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Ridge Industries",
+      "outcome": "PASS",
+      "reason_categories": [
+        "unit_trap"
+      ],
+      "material": "AL 6061",
+      "quantity": 3.6,
+      "quantity_unit": "MT",
+      "total_price": 1337790.0,
+      "currency": "INR",
+      "delivery_days": 43,
+      "delivery_text": "within 43 days",
+      "payment_terms": "28 days net",
+      "bid_validity": 65,
+      "warranty_months": 12,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-03",
+          "expiry": "2027-06-30",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "indian",
+        "slot": 2
+      },
+      "notes": "Face number equals requirement but unit differs (kg vs MT)."
+    }
+  ],
+  "policy": {
+    "enabled": false,
+    "approval_threshold": null,
+    "mandatory_certs": [
+      "ISO 9001:2015"
+    ]
+  },
+  "ground_truth": {
+    "expected_recommendation": "Meridian Industries",
+    "expected_status": "recommended",
+    "expected_outcomes": {
+      "Meridian Industries": {
+        "status": "PASS",
+        "reasons": []
+      },
+      "Quantum Industries": {
+        "status": "FAIL",
+        "reasons": [
+          "quantity_shortfall"
+        ]
+      },
+      "Ridge Industries": {
+        "status": "PASS",
+        "reasons": [
+          "unit_trap"
+        ]
+      }
+    },
+    "expected_requirements": [
+      {
+        "field": "material",
+        "operator": "eq",
+        "value": "AL 6061",
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "material",
+        "source_doc": "spec"
+      },
+      {
+        "field": "quantity",
+        "operator": "gte",
+        "value": 3597.0,
+        "unit": "kg",
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "quantity",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "price",
+        "operator": "lte",
+        "value": 1408200.0,
+        "unit": null,
+        "currency": "INR",
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_price",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "delivery_days",
+        "operator": "lte",
+        "value": 45.0,
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_delivery",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "certification",
+        "operator": "in",
+        "value": [
+          "ISO 9001:2015"
+        ],
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "certification",
+        "source_doc": "rfq"
+      }
+    ],
+    "expected_evidence_fields": {
+      "Meridian Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Quantum Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Ridge Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ]
+    },
+    "expected_abstention": false
+  },
+  "retrieval_tasks": [
+    {
+      "id": "retr-bench-029-0",
+      "query": "Who quoted for Aluminium 6061 T6 bar?",
+      "expected_doc_ids": [
+        "quote_meridian_industries.pdf",
+        "quote_quantum_industries.pdf",
+        "quote_ridge_industries.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-029-1",
+      "query": "What is the required quantity?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-029-2",
+      "query": "What is the maximum budget?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-029-3",
+      "query": "Which certifications are mandatory?",
+      "expected_doc_ids": [
+        "rfq.pdf",
+        "policy.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-029-4",
+      "query": "Delivery commitment of Meridian Industries",
+      "expected_doc_ids": [
+        "quote_meridian_industries.pdf"
+      ]
+    }
+  ],
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ]
+}

@@ -1,0 +1,330 @@
+{
+  "case_id": "bench-043",
+  "title": "Withhold on unverifiable claims — EC grade copper wire",
+  "template": "unverifiable",
+  "variant": 43,
+  "seed": "case-v1:43",
+  "material_id": "copper-wire",
+  "case_date": "2025-07-06",
+  "synthetic": true,
+  "tags": [
+    "abstention",
+    "insufficient",
+    "missing_field"
+  ],
+  "documents": {
+    "rfq": "rfq.pdf",
+    "spec": "spec.pdf",
+    "policy": "policy.pdf",
+    "quote_0": "quote_ridge_engineering.pdf",
+    "certificates_0": "certificates_ridge_engineering.pdf",
+    "history_0": "history_ridge_engineering.pdf",
+    "quote_1": "quote_cobalt_industries.pdf",
+    "history_1": "history_cobalt_industries.pdf",
+    "quote_2": "quote_atlas_industries.pdf",
+    "certificates_2": "certificates_atlas_industries.pdf",
+    "history_2": "history_atlas_industries.pdf"
+  },
+  "authoring_requirements": [
+    {
+      "field": "material",
+      "operator": "eq",
+      "value": "Copper",
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "material",
+      "source_doc": "spec"
+    },
+    {
+      "field": "quantity",
+      "operator": "gte",
+      "value": 3255.0,
+      "unit": "kg",
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "quantity",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "price",
+      "operator": "lte",
+      "value": 2812300.0,
+      "unit": null,
+      "currency": "INR",
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_price",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "delivery_days",
+      "operator": "lte",
+      "value": 30.0,
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_delivery",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "certification",
+      "operator": "in",
+      "value": [
+        "ISO 9001:2015"
+      ],
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "certification",
+      "source_doc": "rfq"
+    }
+  ],
+  "authoring_suppliers": [
+    {
+      "supplier": "Ridge Engineering",
+      "outcome": "UNVERIFIED",
+      "reason_categories": [
+        "missing_price"
+      ],
+      "material": "Copper",
+      "quantity": 3255.0,
+      "quantity_unit": "kg",
+      "total_price": null,
+      "currency": "INR",
+      "delivery_days": 26,
+      "delivery_text": "within 26 days",
+      "payment_terms": "28 days net",
+      "bid_validity": 70,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-09",
+          "expiry": "2027-07-06",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Cobalt Industries",
+      "outcome": "UNVERIFIED",
+      "reason_categories": [
+        "missing_price",
+        "missing_cert"
+      ],
+      "material": "Copper",
+      "quantity": 3255.0,
+      "quantity_unit": "kg",
+      "total_price": null,
+      "currency": "INR",
+      "delivery_days": 27,
+      "delivery_text": "within 27 days",
+      "payment_terms": "18 days net",
+      "bid_validity": 57,
+      "warranty_months": null,
+      "certs": [],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 1
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Atlas Industries",
+      "outcome": "UNVERIFIED",
+      "reason_categories": [
+        "missing_field"
+      ],
+      "material": "Copper",
+      "quantity": 3255.0,
+      "quantity_unit": "kg",
+      "total_price": 2249840.0,
+      "currency": "INR",
+      "delivery_days": null,
+      "delivery_text": null,
+      "payment_terms": null,
+      "bid_validity": 65,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-09",
+          "expiry": "2027-07-06",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 2
+      },
+      "notes": ""
+    }
+  ],
+  "policy": {
+    "enabled": false,
+    "approval_threshold": null,
+    "mandatory_certs": [
+      "ISO 9001:2015"
+    ]
+  },
+  "ground_truth": {
+    "expected_recommendation": null,
+    "expected_status": "insufficient",
+    "expected_outcomes": {
+      "Ridge Engineering": {
+        "status": "UNVERIFIED",
+        "reasons": [
+          "missing_price"
+        ]
+      },
+      "Cobalt Industries": {
+        "status": "UNVERIFIED",
+        "reasons": [
+          "missing_price",
+          "missing_cert"
+        ]
+      },
+      "Atlas Industries": {
+        "status": "UNVERIFIED",
+        "reasons": [
+          "missing_field"
+        ]
+      }
+    },
+    "expected_requirements": [
+      {
+        "field": "material",
+        "operator": "eq",
+        "value": "Copper",
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "material",
+        "source_doc": "spec"
+      },
+      {
+        "field": "quantity",
+        "operator": "gte",
+        "value": 3255.0,
+        "unit": "kg",
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "quantity",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "price",
+        "operator": "lte",
+        "value": 2812300.0,
+        "unit": null,
+        "currency": "INR",
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_price",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "delivery_days",
+        "operator": "lte",
+        "value": 30.0,
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_delivery",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "certification",
+        "operator": "in",
+        "value": [
+          "ISO 9001:2015"
+        ],
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "certification",
+        "source_doc": "rfq"
+      }
+    ],
+    "expected_evidence_fields": {
+      "Ridge Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "delivery_days"
+      ],
+      "Cobalt Industries": [
+        "material",
+        "quantity",
+        "delivery_days"
+      ],
+      "Atlas Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price"
+      ]
+    },
+    "expected_abstention": true
+  },
+  "retrieval_tasks": [
+    {
+      "id": "retr-bench-043-0",
+      "query": "Who quoted for EC grade copper wire?",
+      "expected_doc_ids": [
+        "quote_ridge_engineering.pdf",
+        "quote_cobalt_industries.pdf",
+        "quote_atlas_industries.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-043-1",
+      "query": "What is the required quantity?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-043-2",
+      "query": "What is the maximum budget?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-043-3",
+      "query": "Which certifications are mandatory?",
+      "expected_doc_ids": [
+        "rfq.pdf",
+        "policy.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-043-4",
+      "query": "Delivery commitment of Ridge Engineering",
+      "expected_doc_ids": [
+        "quote_ridge_engineering.pdf"
+      ]
+    }
+  ],
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ]
+}

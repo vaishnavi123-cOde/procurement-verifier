@@ -1,0 +1,155 @@
+{
+  "synthetic": true,
+  "materials": [
+    {
+      "id": "ss316l-pipe",
+      "name": "SS 316L seamless pipe",
+      "family": "stainless-steel",
+      "unspsc": "30203000",
+      "grades": [
+        "SS 316L",
+        "SS 316"
+      ],
+      "unit": "m",
+      "base_price_inr": 1450.0
+    },
+    {
+      "id": "ss304-pipe",
+      "name": "SS 304 seamless pipe",
+      "family": "stainless-steel",
+      "unspsc": "30203000",
+      "grades": [
+        "SS 304",
+        "SS 316"
+      ],
+      "unit": "m",
+      "base_price_inr": 990.0
+    },
+    {
+      "id": "ss304-sheet",
+      "name": "SS 304 sheet",
+      "family": "stainless-steel",
+      "unspsc": "30201500",
+      "grades": [
+        "SS 304"
+      ],
+      "unit": "m2",
+      "base_price_inr": 780.0
+    },
+    {
+      "id": "ss316-sheet",
+      "name": "SS 316 sheet",
+      "family": "stainless-steel",
+      "unspsc": "30201500",
+      "grades": [
+        "SS 316",
+        "SS 316L"
+      ],
+      "unit": "m2",
+      "base_price_inr": 920.0
+    },
+    {
+      "id": "cs-pipe",
+      "name": "Carbon steel ERW pipe",
+      "family": "carbon-steel",
+      "unspsc": "30203000",
+      "grades": [
+        "CS",
+        "MS"
+      ],
+      "unit": "m",
+      "base_price_inr": 320.0
+    },
+    {
+      "id": "ms-plate",
+      "name": "Mild steel plate",
+      "family": "carbon-steel",
+      "unspsc": "30201500",
+      "grades": [
+        "MS",
+        "CS"
+      ],
+      "unit": "kg",
+      "base_price_inr": 58.0
+    },
+    {
+      "id": "en8-bar",
+      "name": "EN8 bright round bar",
+      "family": "carbon-steel",
+      "unspsc": "30203007",
+      "grades": [
+        "EN 8",
+        "C 45"
+      ],
+      "unit": "kg",
+      "base_price_inr": 62.0
+    },
+    {
+      "id": "c45-shaft",
+      "name": "C45 ground shaft",
+      "family": "carbon-steel",
+      "unspsc": "30203007",
+      "grades": [
+        "C 45",
+        "EN 8"
+      ],
+      "unit": "kg",
+      "base_price_inr": 66.0
+    },
+    {
+      "id": "copper-wire",
+      "name": "EC grade copper wire",
+      "family": "copper",
+      "unspsc": "23132100",
+      "grades": [
+        "Copper"
+      ],
+      "unit": "kg",
+      "base_price_inr": 640.0
+    },
+    {
+      "id": "brass-valve",
+      "name": "Brass gate valve DN50",
+      "family": "brass",
+      "unspsc": "40141600",
+      "grades": [
+        "Brass"
+      ],
+      "unit": "unit",
+      "base_price_inr": 1250.0
+    },
+    {
+      "id": "al6061-bar",
+      "name": "Aluminium 6061 T6 bar",
+      "family": "aluminium",
+      "unspsc": "30203006",
+      "grades": [
+        "AL 6061"
+      ],
+      "unit": "kg",
+      "base_price_inr": 290.0
+    },
+    {
+      "id": "gi-pipe",
+      "name": "Galvanised iron pipe 25 NB",
+      "family": "gi",
+      "unspsc": "30203000",
+      "grades": [
+        "GI"
+      ],
+      "unit": "m",
+      "base_price_inr": 210.0
+    },
+    {
+      "id": "hdpe-pipe",
+      "name": "HDPE pipe 100 mm PN6",
+      "family": "hdpe",
+      "unspsc": "30213000",
+      "grades": [
+        "HDPE"
+      ],
+      "unit": "m",
+      "base_price_inr": 185.0
+    }
+  ]
+}

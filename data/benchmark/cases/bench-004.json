@@ -1,0 +1,336 @@
+{
+  "case_id": "bench-004",
+  "title": "Compliance shortlist — EC grade copper wire",
+  "template": "compliance",
+  "variant": 4,
+  "seed": "case-v1:4",
+  "material_id": "copper-wire",
+  "case_date": "2025-06-27",
+  "synthetic": true,
+  "tags": [
+    "material_mismatch",
+    "price_over"
+  ],
+  "documents": {
+    "rfq": "rfq.pdf",
+    "spec": "spec.pdf",
+    "policy": "policy.pdf",
+    "quote_0": "quote_vulcan_engineering.pdf",
+    "certificates_0": "certificates_vulcan_engineering.pdf",
+    "history_0": "history_vulcan_engineering.pdf",
+    "quote_1": "quote_titan_engineering.pdf",
+    "certificates_1": "certificates_titan_engineering.pdf",
+    "history_1": "history_titan_engineering.pdf",
+    "quote_2": "quote_nova_engineering.pdf",
+    "certificates_2": "certificates_nova_engineering.pdf",
+    "history_2": "history_nova_engineering.pdf"
+  },
+  "authoring_requirements": [
+    {
+      "field": "material",
+      "operator": "eq",
+      "value": "Copper",
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "material",
+      "source_doc": "spec"
+    },
+    {
+      "field": "quantity",
+      "operator": "gte",
+      "value": 3795.0,
+      "unit": "kg",
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "quantity",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "price",
+      "operator": "lte",
+      "value": 3278900.0,
+      "unit": null,
+      "currency": "INR",
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_price",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "delivery_days",
+      "operator": "lte",
+      "value": 45.0,
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_delivery",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "certification",
+      "operator": "in",
+      "value": [
+        "ISO 9001:2015"
+      ],
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "certification",
+      "source_doc": "rfq"
+    }
+  ],
+  "authoring_suppliers": [
+    {
+      "supplier": "Vulcan Engineering",
+      "outcome": "PASS",
+      "reason_categories": [],
+      "material": "Copper",
+      "quantity": 3795.0,
+      "quantity_unit": "kg",
+      "total_price": 2951010.0,
+      "currency": "INR",
+      "delivery_days": 36,
+      "delivery_text": "within 36 days",
+      "payment_terms": "29 days net",
+      "bid_validity": 64,
+      "warranty_months": 12,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-08-31",
+          "expiry": "2027-06-27",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "indian",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Titan Engineering",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "price_over"
+      ],
+      "material": "Copper",
+      "quantity": 3795.0,
+      "quantity_unit": "kg",
+      "total_price": 4590460.0,
+      "currency": "INR",
+      "delivery_days": 38,
+      "delivery_text": "within 38 days",
+      "payment_terms": "27 days net",
+      "bid_validity": 69,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-08-31",
+          "expiry": "2027-06-27",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Nova Engineering",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "material_mismatch"
+      ],
+      "material": "MS",
+      "quantity": 3795.0,
+      "quantity_unit": "kg",
+      "total_price": 2459175.0,
+      "currency": "INR",
+      "delivery_days": 42,
+      "delivery_text": "within 42 days",
+      "payment_terms": "23 days net",
+      "bid_validity": 72,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-08-31",
+          "expiry": "2027-06-27",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 0
+      },
+      "notes": ""
+    }
+  ],
+  "policy": {
+    "enabled": false,
+    "approval_threshold": null,
+    "mandatory_certs": [
+      "ISO 9001:2015"
+    ]
+  },
+  "ground_truth": {
+    "expected_recommendation": "Vulcan Engineering",
+    "expected_status": "recommended",
+    "expected_outcomes": {
+      "Vulcan Engineering": {
+        "status": "PASS",
+        "reasons": []
+      },
+      "Titan Engineering": {
+        "status": "FAIL",
+        "reasons": [
+          "price_over"
+        ]
+      },
+      "Nova Engineering": {
+        "status": "FAIL",
+        "reasons": [
+          "material_mismatch"
+        ]
+      }
+    },
+    "expected_requirements": [
+      {
+        "field": "material",
+        "operator": "eq",
+        "value": "Copper",
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "material",
+        "source_doc": "spec"
+      },
+      {
+        "field": "quantity",
+        "operator": "gte",
+        "value": 3795.0,
+        "unit": "kg",
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "quantity",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "price",
+        "operator": "lte",
+        "value": 3278900.0,
+        "unit": null,
+        "currency": "INR",
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_price",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "delivery_days",
+        "operator": "lte",
+        "value": 45.0,
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_delivery",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "certification",
+        "operator": "in",
+        "value": [
+          "ISO 9001:2015"
+        ],
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "certification",
+        "source_doc": "rfq"
+      }
+    ],
+    "expected_evidence_fields": {
+      "Vulcan Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Titan Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Nova Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ]
+    },
+    "expected_abstention": false
+  },
+  "retrieval_tasks": [
+    {
+      "id": "retr-bench-004-0",
+      "query": "Who quoted for EC grade copper wire?",
+      "expected_doc_ids": [
+        "quote_vulcan_engineering.pdf",
+        "quote_titan_engineering.pdf",
+        "quote_nova_engineering.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-004-1",
+      "query": "What is the required quantity?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-004-2",
+      "query": "What is the maximum budget?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-004-3",
+      "query": "Which certifications are mandatory?",
+      "expected_doc_ids": [
+        "rfq.pdf",
+        "policy.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-004-4",
+      "query": "Delivery commitment of Vulcan Engineering",
+      "expected_doc_ids": [
+        "quote_vulcan_engineering.pdf"
+      ]
+    }
+  ],
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ]
+}

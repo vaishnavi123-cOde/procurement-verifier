@@ -1,0 +1,750 @@
+{
+  "dataset": "procurement-benchmark",
+  "cohort": "synthetic-v1",
+  "version": "1.0.0",
+  "case_count": 55,
+  "independence": "Ground truth is authored in backend/app/dataset/scenarios.py. The production decision engine is never used to produce answers.",
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ],
+  "cases": [
+    {
+      "case_id": "bench-000",
+      "title": "Compliance shortlist \u2014 SS 316L seamless pipe",
+      "template": "compliance",
+      "variant": 0,
+      "tags": [
+        "material_mismatch",
+        "price_over"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-000.json"
+    },
+    {
+      "case_id": "bench-001",
+      "title": "Compliance shortlist \u2014 SS 304 sheet",
+      "template": "compliance",
+      "variant": 1,
+      "tags": [
+        "material_mismatch",
+        "price_over"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-001.json"
+    },
+    {
+      "case_id": "bench-002",
+      "title": "Compliance shortlist \u2014 Carbon steel ERW pipe",
+      "template": "compliance",
+      "variant": 2,
+      "tags": [
+        "material_mismatch",
+        "price_over"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-002.json"
+    },
+    {
+      "case_id": "bench-003",
+      "title": "Compliance shortlist \u2014 EN8 bright round bar",
+      "template": "compliance",
+      "variant": 3,
+      "tags": [
+        "material_mismatch",
+        "price_over"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-003.json"
+    },
+    {
+      "case_id": "bench-004",
+      "title": "Compliance shortlist \u2014 EC grade copper wire",
+      "template": "compliance",
+      "variant": 4,
+      "tags": [
+        "material_mismatch",
+        "price_over"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-004.json"
+    },
+    {
+      "case_id": "bench-005",
+      "title": "Compliance shortlist \u2014 Aluminium 6061 T6 bar",
+      "template": "compliance",
+      "variant": 5,
+      "tags": [
+        "material_mismatch",
+        "price_over"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-005.json"
+    },
+    {
+      "case_id": "bench-006",
+      "title": "Compliance shortlist \u2014 HDPE pipe 100 mm PN6",
+      "template": "compliance",
+      "variant": 6,
+      "tags": [
+        "material_mismatch",
+        "price_over"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-006.json"
+    },
+    {
+      "case_id": "bench-007",
+      "title": "Compliance shortlist \u2014 SS 304 seamless pipe",
+      "template": "compliance",
+      "variant": 7,
+      "tags": [
+        "material_mismatch",
+        "price_over"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-007.json"
+    },
+    {
+      "case_id": "bench-008",
+      "title": "Compliance shortlist \u2014 SS 316 sheet",
+      "template": "compliance",
+      "variant": 8,
+      "tags": [
+        "material_mismatch",
+        "price_over"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-008.json"
+    },
+    {
+      "case_id": "bench-009",
+      "title": "Compliance shortlist \u2014 Mild steel plate",
+      "template": "compliance",
+      "variant": 9,
+      "tags": [
+        "material_mismatch",
+        "price_over"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-009.json"
+    },
+    {
+      "case_id": "bench-010",
+      "title": "Compliance shortlist \u2014 C45 ground shaft",
+      "template": "compliance",
+      "variant": 10,
+      "tags": [
+        "material_mismatch",
+        "price_over"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-010.json"
+    },
+    {
+      "case_id": "bench-011",
+      "title": "Compliance shortlist \u2014 Brass gate valve DN50",
+      "template": "compliance",
+      "variant": 11,
+      "tags": [
+        "material_mismatch",
+        "price_over"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-011.json"
+    },
+    {
+      "case_id": "bench-012",
+      "title": "Certificate gauntlet \u2014 HDPE pipe 100 mm PN6",
+      "template": "certificate_gauntlet",
+      "variant": 12,
+      "tags": [
+        "expired_cert",
+        "missing_cert"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-012.json"
+    },
+    {
+      "case_id": "bench-013",
+      "title": "Certificate gauntlet \u2014 SS 304 seamless pipe",
+      "template": "certificate_gauntlet",
+      "variant": 13,
+      "tags": [
+        "expired_cert",
+        "missing_cert"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-013.json"
+    },
+    {
+      "case_id": "bench-014",
+      "title": "Certificate gauntlet \u2014 SS 316 sheet",
+      "template": "certificate_gauntlet",
+      "variant": 14,
+      "tags": [
+        "expired_cert",
+        "missing_cert"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-014.json"
+    },
+    {
+      "case_id": "bench-015",
+      "title": "Certificate gauntlet \u2014 Mild steel plate",
+      "template": "certificate_gauntlet",
+      "variant": 15,
+      "tags": [
+        "expired_cert",
+        "missing_cert"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-015.json"
+    },
+    {
+      "case_id": "bench-016",
+      "title": "Certificate gauntlet \u2014 C45 ground shaft",
+      "template": "certificate_gauntlet",
+      "variant": 16,
+      "tags": [
+        "expired_cert",
+        "missing_cert"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-016.json"
+    },
+    {
+      "case_id": "bench-017",
+      "title": "Certificate gauntlet \u2014 Brass gate valve DN50",
+      "template": "certificate_gauntlet",
+      "variant": 17,
+      "tags": [
+        "expired_cert",
+        "missing_cert"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-017.json"
+    },
+    {
+      "case_id": "bench-018",
+      "title": "Certificate gauntlet \u2014 Galvanised iron pipe 25 NB",
+      "template": "certificate_gauntlet",
+      "variant": 18,
+      "tags": [
+        "expired_cert",
+        "missing_cert"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-018.json"
+    },
+    {
+      "case_id": "bench-019",
+      "title": "Certificate gauntlet \u2014 SS 316L seamless pipe",
+      "template": "certificate_gauntlet",
+      "variant": 19,
+      "tags": [
+        "expired_cert",
+        "missing_cert"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-019.json"
+    },
+    {
+      "case_id": "bench-020",
+      "title": "Certificate gauntlet \u2014 SS 304 sheet",
+      "template": "certificate_gauntlet",
+      "variant": 20,
+      "tags": [
+        "expired_cert",
+        "missing_cert"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-020.json"
+    },
+    {
+      "case_id": "bench-021",
+      "title": "Certificate gauntlet \u2014 Carbon steel ERW pipe",
+      "template": "certificate_gauntlet",
+      "variant": 21,
+      "tags": [
+        "expired_cert",
+        "missing_cert"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-021.json"
+    },
+    {
+      "case_id": "bench-022",
+      "title": "Quantity and unit discipline \u2014 Brass gate valve DN50",
+      "template": "quantity_units",
+      "variant": 22,
+      "tags": [
+        "quantity_shortfall",
+        "unit_trap"
+      ],
+      "difficulty": "medium",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-022.json"
+    },
+    {
+      "case_id": "bench-023",
+      "title": "Quantity and unit discipline \u2014 Galvanised iron pipe 25 NB",
+      "template": "quantity_units",
+      "variant": 23,
+      "tags": [
+        "quantity_shortfall",
+        "unit_trap"
+      ],
+      "difficulty": "medium",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-023.json"
+    },
+    {
+      "case_id": "bench-024",
+      "title": "Quantity and unit discipline \u2014 SS 316L seamless pipe",
+      "template": "quantity_units",
+      "variant": 24,
+      "tags": [
+        "quantity_shortfall",
+        "unit_trap"
+      ],
+      "difficulty": "medium",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-024.json"
+    },
+    {
+      "case_id": "bench-025",
+      "title": "Quantity and unit discipline \u2014 SS 304 sheet",
+      "template": "quantity_units",
+      "variant": 25,
+      "tags": [
+        "quantity_shortfall",
+        "unit_trap"
+      ],
+      "difficulty": "medium",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-025.json"
+    },
+    {
+      "case_id": "bench-026",
+      "title": "Quantity and unit discipline \u2014 Carbon steel ERW pipe",
+      "template": "quantity_units",
+      "variant": 26,
+      "tags": [
+        "quantity_shortfall",
+        "unit_trap"
+      ],
+      "difficulty": "medium",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-026.json"
+    },
+    {
+      "case_id": "bench-027",
+      "title": "Quantity and unit discipline \u2014 EN8 bright round bar",
+      "template": "quantity_units",
+      "variant": 27,
+      "tags": [
+        "quantity_shortfall",
+        "unit_trap"
+      ],
+      "difficulty": "medium",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-027.json"
+    },
+    {
+      "case_id": "bench-028",
+      "title": "Quantity and unit discipline \u2014 EC grade copper wire",
+      "template": "quantity_units",
+      "variant": 28,
+      "tags": [
+        "quantity_shortfall",
+        "unit_trap"
+      ],
+      "difficulty": "medium",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-028.json"
+    },
+    {
+      "case_id": "bench-029",
+      "title": "Quantity and unit discipline \u2014 Aluminium 6061 T6 bar",
+      "template": "quantity_units",
+      "variant": 29,
+      "tags": [
+        "quantity_shortfall",
+        "unit_trap"
+      ],
+      "difficulty": "medium",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-029.json"
+    },
+    {
+      "case_id": "bench-030",
+      "title": "Quantity and unit discipline \u2014 HDPE pipe 100 mm PN6",
+      "template": "quantity_units",
+      "variant": 30,
+      "tags": [
+        "quantity_shortfall",
+        "unit_trap"
+      ],
+      "difficulty": "medium",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-030.json"
+    },
+    {
+      "case_id": "bench-031",
+      "title": "Foreign currency pricing \u2014 Mild steel plate",
+      "template": "currency_fx",
+      "variant": 31,
+      "tags": [
+        "currency_fx",
+        "price_ok_foreign",
+        "price_over_foreign",
+        "missing_cert"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-031.json"
+    },
+    {
+      "case_id": "bench-032",
+      "title": "Foreign currency pricing \u2014 C45 ground shaft",
+      "template": "currency_fx",
+      "variant": 32,
+      "tags": [
+        "currency_fx",
+        "price_ok_foreign",
+        "price_over_foreign",
+        "missing_cert"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-032.json"
+    },
+    {
+      "case_id": "bench-033",
+      "title": "Foreign currency pricing \u2014 Brass gate valve DN50",
+      "template": "currency_fx",
+      "variant": 33,
+      "tags": [
+        "currency_fx",
+        "price_ok_foreign",
+        "price_over_foreign",
+        "missing_cert"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-033.json"
+    },
+    {
+      "case_id": "bench-034",
+      "title": "Foreign currency pricing \u2014 Galvanised iron pipe 25 NB",
+      "template": "currency_fx",
+      "variant": 34,
+      "tags": [
+        "currency_fx",
+        "price_ok_foreign",
+        "price_over_foreign",
+        "missing_cert"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-034.json"
+    },
+    {
+      "case_id": "bench-035",
+      "title": "Foreign currency pricing \u2014 SS 316L seamless pipe",
+      "template": "currency_fx",
+      "variant": 35,
+      "tags": [
+        "currency_fx",
+        "price_ok_foreign",
+        "price_over_foreign",
+        "missing_cert"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-035.json"
+    },
+    {
+      "case_id": "bench-036",
+      "title": "Foreign currency pricing \u2014 SS 304 sheet",
+      "template": "currency_fx",
+      "variant": 36,
+      "tags": [
+        "currency_fx",
+        "price_ok_foreign",
+        "price_over_foreign",
+        "missing_cert"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-036.json"
+    },
+    {
+      "case_id": "bench-037",
+      "title": "Foreign currency pricing \u2014 Carbon steel ERW pipe",
+      "template": "currency_fx",
+      "variant": 37,
+      "tags": [
+        "currency_fx",
+        "price_ok_foreign",
+        "price_over_foreign",
+        "missing_cert"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-037.json"
+    },
+    {
+      "case_id": "bench-038",
+      "title": "Foreign currency pricing \u2014 EN8 bright round bar",
+      "template": "currency_fx",
+      "variant": 38,
+      "tags": [
+        "currency_fx",
+        "price_ok_foreign",
+        "price_over_foreign",
+        "missing_cert"
+      ],
+      "difficulty": "hard",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-038.json"
+    },
+    {
+      "case_id": "bench-039",
+      "title": "Withhold on unverifiable claims \u2014 SS 316L seamless pipe",
+      "template": "unverifiable",
+      "variant": 39,
+      "tags": [
+        "abstention",
+        "insufficient",
+        "missing_field"
+      ],
+      "difficulty": "conceptual",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-039.json"
+    },
+    {
+      "case_id": "bench-040",
+      "title": "Withhold on unverifiable claims \u2014 SS 304 sheet",
+      "template": "unverifiable",
+      "variant": 40,
+      "tags": [
+        "abstention",
+        "insufficient",
+        "missing_field"
+      ],
+      "difficulty": "conceptual",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-040.json"
+    },
+    {
+      "case_id": "bench-041",
+      "title": "Withhold on unverifiable claims \u2014 Carbon steel ERW pipe",
+      "template": "unverifiable",
+      "variant": 41,
+      "tags": [
+        "abstention",
+        "insufficient",
+        "missing_field"
+      ],
+      "difficulty": "conceptual",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-041.json"
+    },
+    {
+      "case_id": "bench-042",
+      "title": "Withhold on unverifiable claims \u2014 EN8 bright round bar",
+      "template": "unverifiable",
+      "variant": 42,
+      "tags": [
+        "abstention",
+        "insufficient",
+        "missing_field"
+      ],
+      "difficulty": "conceptual",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-042.json"
+    },
+    {
+      "case_id": "bench-043",
+      "title": "Withhold on unverifiable claims \u2014 EC grade copper wire",
+      "template": "unverifiable",
+      "variant": 43,
+      "tags": [
+        "abstention",
+        "insufficient",
+        "missing_field"
+      ],
+      "difficulty": "conceptual",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-043.json"
+    },
+    {
+      "case_id": "bench-044",
+      "title": "Withhold on unverifiable claims \u2014 Aluminium 6061 T6 bar",
+      "template": "unverifiable",
+      "variant": 44,
+      "tags": [
+        "abstention",
+        "insufficient",
+        "missing_field"
+      ],
+      "difficulty": "conceptual",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-044.json"
+    },
+    {
+      "case_id": "bench-045",
+      "title": "Withhold recommendation \u2014 EN8 bright round bar",
+      "template": "abstention",
+      "variant": 45,
+      "tags": [
+        "abstention",
+        "no_valid"
+      ],
+      "difficulty": "conceptual",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-045.json"
+    },
+    {
+      "case_id": "bench-046",
+      "title": "Withhold recommendation \u2014 EC grade copper wire",
+      "template": "abstention",
+      "variant": 46,
+      "tags": [
+        "abstention",
+        "no_valid"
+      ],
+      "difficulty": "conceptual",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-046.json"
+    },
+    {
+      "case_id": "bench-047",
+      "title": "Withhold recommendation \u2014 Aluminium 6061 T6 bar",
+      "template": "abstention",
+      "variant": 47,
+      "tags": [
+        "abstention",
+        "no_valid"
+      ],
+      "difficulty": "conceptual",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-047.json"
+    },
+    {
+      "case_id": "bench-048",
+      "title": "Withhold recommendation \u2014 HDPE pipe 100 mm PN6",
+      "template": "abstention",
+      "variant": 48,
+      "tags": [
+        "abstention",
+        "no_valid"
+      ],
+      "difficulty": "conceptual",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-048.json"
+    },
+    {
+      "case_id": "bench-049",
+      "title": "Withhold recommendation \u2014 SS 304 seamless pipe",
+      "template": "abstention",
+      "variant": 49,
+      "tags": [
+        "abstention",
+        "no_valid"
+      ],
+      "difficulty": "conceptual",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-049.json"
+    },
+    {
+      "case_id": "bench-050",
+      "title": "Among compliant bidders \u2014 Galvanised iron pipe 25 NB",
+      "template": "dual_compliant",
+      "variant": 50,
+      "tags": [
+        "dual_compliant",
+        "expired_cert"
+      ],
+      "difficulty": "medium",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-050.json"
+    },
+    {
+      "case_id": "bench-051",
+      "title": "Among compliant bidders \u2014 SS 316L seamless pipe",
+      "template": "dual_compliant",
+      "variant": 51,
+      "tags": [
+        "dual_compliant",
+        "expired_cert"
+      ],
+      "difficulty": "medium",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-051.json"
+    },
+    {
+      "case_id": "bench-052",
+      "title": "Among compliant bidders \u2014 SS 304 sheet",
+      "template": "dual_compliant",
+      "variant": 52,
+      "tags": [
+        "dual_compliant",
+        "expired_cert"
+      ],
+      "difficulty": "medium",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-052.json"
+    },
+    {
+      "case_id": "bench-053",
+      "title": "Among compliant bidders \u2014 Carbon steel ERW pipe",
+      "template": "dual_compliant",
+      "variant": 53,
+      "tags": [
+        "dual_compliant",
+        "expired_cert"
+      ],
+      "difficulty": "medium",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-053.json"
+    },
+    {
+      "case_id": "bench-054",
+      "title": "Among compliant bidders \u2014 EN8 bright round bar",
+      "template": "dual_compliant",
+      "variant": 54,
+      "tags": [
+        "dual_compliant",
+        "expired_cert"
+      ],
+      "difficulty": "medium",
+      "synthetic": true,
+      "ground_truth_file": "cases/bench-054.json"
+    }
+  ]
+}

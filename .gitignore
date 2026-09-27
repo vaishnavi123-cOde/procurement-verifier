@@ -1,0 +1,60 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# ---- Environment / secrets ----
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+*.key
+*.p12
+
+# ---- Databases ----
+*.db
+*.sqlite
+*.sqlite3
+pgdata/
+
+# ---- Logs / runtime ----
+logs/
+*.log
+nohup.out
+
+# ---- Frontend ----
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+
+# ---- Data: generated evaluation output & uploaded documents ----
+# NOTE: data/benchmark and data/synthetic (intentional benchmark ground truth
+# and PDF sources) MUST be committed and are therefore not ignored.
+data/evaluation_runs/
+data/procurement.db
+data/uploads/
+data/cache/
+
+# ---- Qdrant local storage ----
+qdrant_storage/
+.qdrant/
+
+# ---- OS / editors ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

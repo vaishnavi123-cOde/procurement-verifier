@@ -1,0 +1,336 @@
+{
+  "case_id": "bench-026",
+  "title": "Quantity and unit discipline — Carbon steel ERW pipe",
+  "template": "quantity_units",
+  "variant": 26,
+  "seed": "case-v1:26",
+  "material_id": "cs-pipe",
+  "case_date": "2025-06-21",
+  "synthetic": true,
+  "tags": [
+    "quantity_shortfall",
+    "unit_trap"
+  ],
+  "documents": {
+    "rfq": "rfq.pdf",
+    "spec": "spec.pdf",
+    "policy": "policy.pdf",
+    "quote_0": "quote_apex_engineering.pdf",
+    "certificates_0": "certificates_apex_engineering.pdf",
+    "history_0": "history_apex_engineering.pdf",
+    "quote_1": "quote_vega_engineering.pdf",
+    "certificates_1": "certificates_vega_engineering.pdf",
+    "history_1": "history_vega_engineering.pdf",
+    "quote_2": "quote_vulcan_industries.pdf",
+    "certificates_2": "certificates_vulcan_industries.pdf",
+    "history_2": "history_vulcan_industries.pdf"
+  },
+  "authoring_requirements": [
+    {
+      "field": "material",
+      "operator": "eq",
+      "value": "CS",
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "material",
+      "source_doc": "spec"
+    },
+    {
+      "field": "quantity",
+      "operator": "gte",
+      "value": 1158.0,
+      "unit": "m",
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "quantity",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "price",
+      "operator": "lte",
+      "value": 500300.0,
+      "unit": null,
+      "currency": "INR",
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_price",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "delivery_days",
+      "operator": "lte",
+      "value": 30.0,
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_delivery",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "certification",
+      "operator": "in",
+      "value": [
+        "ISO 9001:2015"
+      ],
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "certification",
+      "source_doc": "rfq"
+    }
+  ],
+  "authoring_suppliers": [
+    {
+      "supplier": "Apex Engineering",
+      "outcome": "PASS",
+      "reason_categories": [],
+      "material": "CS",
+      "quantity": 1158.0,
+      "quantity_unit": "m",
+      "total_price": 460276.0,
+      "currency": "INR",
+      "delivery_days": 22,
+      "delivery_text": "within 22 days",
+      "payment_terms": "23 days net",
+      "bid_validity": 59,
+      "warranty_months": 12,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-08-25",
+          "expiry": "2027-06-21",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Vega Engineering",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "quantity_shortfall"
+      ],
+      "material": "CS",
+      "quantity": 753.0,
+      "quantity_unit": "m",
+      "total_price": 350210.0,
+      "currency": "INR",
+      "delivery_days": 23,
+      "delivery_text": "within 23 days",
+      "payment_terms": "37 days net",
+      "bid_validity": 62,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-08-25",
+          "expiry": "2027-06-21",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "indian",
+        "slot": 1
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Vulcan Industries",
+      "outcome": "PASS",
+      "reason_categories": [
+        "unit_trap"
+      ],
+      "material": "CS",
+      "quantity": 1158.0,
+      "quantity_unit": "m",
+      "total_price": 475285.0,
+      "currency": "INR",
+      "delivery_days": 26,
+      "delivery_text": "within 26 days",
+      "payment_terms": "31 days net",
+      "bid_validity": 62,
+      "warranty_months": 12,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-08-25",
+          "expiry": "2027-06-21",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 2
+      },
+      "notes": ""
+    }
+  ],
+  "policy": {
+    "enabled": false,
+    "approval_threshold": null,
+    "mandatory_certs": [
+      "ISO 9001:2015"
+    ]
+  },
+  "ground_truth": {
+    "expected_recommendation": "Apex Engineering",
+    "expected_status": "recommended",
+    "expected_outcomes": {
+      "Apex Engineering": {
+        "status": "PASS",
+        "reasons": []
+      },
+      "Vega Engineering": {
+        "status": "FAIL",
+        "reasons": [
+          "quantity_shortfall"
+        ]
+      },
+      "Vulcan Industries": {
+        "status": "PASS",
+        "reasons": [
+          "unit_trap"
+        ]
+      }
+    },
+    "expected_requirements": [
+      {
+        "field": "material",
+        "operator": "eq",
+        "value": "CS",
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "material",
+        "source_doc": "spec"
+      },
+      {
+        "field": "quantity",
+        "operator": "gte",
+        "value": 1158.0,
+        "unit": "m",
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "quantity",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "price",
+        "operator": "lte",
+        "value": 500300.0,
+        "unit": null,
+        "currency": "INR",
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_price",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "delivery_days",
+        "operator": "lte",
+        "value": 30.0,
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_delivery",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "certification",
+        "operator": "in",
+        "value": [
+          "ISO 9001:2015"
+        ],
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "certification",
+        "source_doc": "rfq"
+      }
+    ],
+    "expected_evidence_fields": {
+      "Apex Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Vega Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Vulcan Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ]
+    },
+    "expected_abstention": false
+  },
+  "retrieval_tasks": [
+    {
+      "id": "retr-bench-026-0",
+      "query": "Who quoted for Carbon steel ERW pipe?",
+      "expected_doc_ids": [
+        "quote_apex_engineering.pdf",
+        "quote_vega_engineering.pdf",
+        "quote_vulcan_industries.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-026-1",
+      "query": "What is the required quantity?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-026-2",
+      "query": "What is the maximum budget?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-026-3",
+      "query": "Which certifications are mandatory?",
+      "expected_doc_ids": [
+        "rfq.pdf",
+        "policy.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-026-4",
+      "query": "Delivery commitment of Apex Engineering",
+      "expected_doc_ids": [
+        "quote_apex_engineering.pdf"
+      ]
+    }
+  ],
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ]
+}

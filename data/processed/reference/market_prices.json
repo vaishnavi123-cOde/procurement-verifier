@@ -1,0 +1,33 @@
+{
+  "description": "Indicative market series from the World Bank Pink Sheet (CC BY 4.0). Values are populated by scripts/process_dataset.py when fetched. Not used as benchmark ground truth.",
+  "license": "CC BY 4.0",
+  "source_provenance_id": "wb-pink-sheet",
+  "recorded_at": "2026-09-13T17:46:18+00:00",
+  "series": [
+    {
+      "series": "Aluminium (LME), cash, USD/mt",
+      "unit": "USD/mt",
+      "year_avg": null
+    },
+    {
+      "series": "Copper (LME), grade A, USD/mt",
+      "unit": "USD/mt",
+      "year_avg": null
+    },
+    {
+      "series": "Steel, HRC, China, USD/mt",
+      "unit": "USD/mt",
+      "year_avg": null
+    },
+    {
+      "series": "Zinc (LME), high grade, USD/mt",
+      "unit": "USD/mt",
+      "year_avg": null
+    },
+    {
+      "series": "Iron ore, 62% Fe, USD/dmt",
+      "unit": "USD/dmt",
+      "year_avg": null
+    }
+  ]
+}

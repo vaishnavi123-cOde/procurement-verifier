@@ -1,0 +1,332 @@
+{
+  "case_id": "bench-038",
+  "title": "Foreign currency pricing — EN8 bright round bar",
+  "template": "currency_fx",
+  "variant": 38,
+  "seed": "case-v1:38",
+  "material_id": "en8-bar",
+  "case_date": "2025-06-21",
+  "synthetic": true,
+  "tags": [
+    "currency_fx",
+    "price_ok_foreign",
+    "price_over_foreign",
+    "missing_cert"
+  ],
+  "documents": {
+    "rfq": "rfq.pdf",
+    "spec": "spec.pdf",
+    "policy": "policy.pdf",
+    "quote_0": "quote_zenith_industries.pdf",
+    "certificates_0": "certificates_zenith_industries.pdf",
+    "history_0": "history_zenith_industries.pdf",
+    "quote_1": "quote_summit_industries.pdf",
+    "certificates_1": "certificates_summit_industries.pdf",
+    "history_1": "history_summit_industries.pdf",
+    "quote_2": "quote_prism_engineering.pdf",
+    "history_2": "history_prism_engineering.pdf"
+  },
+  "authoring_requirements": [
+    {
+      "field": "material",
+      "operator": "eq",
+      "value": "EN 8",
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "material",
+      "source_doc": "spec"
+    },
+    {
+      "field": "quantity",
+      "operator": "gte",
+      "value": 4626.0,
+      "unit": "kg",
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "quantity",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "price",
+      "operator": "lte",
+      "value": 387200.0,
+      "unit": null,
+      "currency": "INR",
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_price",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "delivery_days",
+      "operator": "lte",
+      "value": 21.0,
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_delivery",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "certification",
+      "operator": "in",
+      "value": [
+        "ISO 9001:2015"
+      ],
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "certification",
+      "source_doc": "rfq"
+    }
+  ],
+  "authoring_suppliers": [
+    {
+      "supplier": "Zenith Industries",
+      "outcome": "PASS",
+      "reason_categories": [
+        "price_ok_foreign"
+      ],
+      "material": "EN 8",
+      "quantity": 4626.0,
+      "quantity_unit": "kg",
+      "total_price": 4379.05,
+      "currency": "USD",
+      "delivery_days": 19,
+      "delivery_text": "within 19 days",
+      "payment_terms": "27 days net",
+      "bid_validity": 64,
+      "warranty_months": 12,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-08-25",
+          "expiry": "2027-06-21",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Summit Industries",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "price_over_foreign"
+      ],
+      "material": "EN 8",
+      "quantity": 4626.0,
+      "quantity_unit": "kg",
+      "total_price": 6453.33,
+      "currency": "USD",
+      "delivery_days": 17,
+      "delivery_text": "within 17 days",
+      "payment_terms": "21 days net",
+      "bid_validity": 68,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-08-25",
+          "expiry": "2027-06-21",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 1
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Prism Engineering",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "missing_cert"
+      ],
+      "material": "EN 8",
+      "quantity": 4626.0,
+      "quantity_unit": "kg",
+      "total_price": 271040.0,
+      "currency": "INR",
+      "delivery_days": 17,
+      "delivery_text": "within 17 days",
+      "payment_terms": "38 days net",
+      "bid_validity": 53,
+      "warranty_months": null,
+      "certs": [],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 2
+      },
+      "notes": ""
+    }
+  ],
+  "policy": {
+    "enabled": false,
+    "approval_threshold": null,
+    "mandatory_certs": [
+      "ISO 9001:2015"
+    ]
+  },
+  "ground_truth": {
+    "expected_recommendation": "Zenith Industries",
+    "expected_status": "recommended",
+    "expected_outcomes": {
+      "Zenith Industries": {
+        "status": "PASS",
+        "reasons": [
+          "price_ok_foreign"
+        ]
+      },
+      "Summit Industries": {
+        "status": "FAIL",
+        "reasons": [
+          "price_over_foreign"
+        ]
+      },
+      "Prism Engineering": {
+        "status": "FAIL",
+        "reasons": [
+          "missing_cert"
+        ]
+      }
+    },
+    "expected_requirements": [
+      {
+        "field": "material",
+        "operator": "eq",
+        "value": "EN 8",
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "material",
+        "source_doc": "spec"
+      },
+      {
+        "field": "quantity",
+        "operator": "gte",
+        "value": 4626.0,
+        "unit": "kg",
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "quantity",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "price",
+        "operator": "lte",
+        "value": 387200.0,
+        "unit": null,
+        "currency": "INR",
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_price",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "delivery_days",
+        "operator": "lte",
+        "value": 21.0,
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_delivery",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "certification",
+        "operator": "in",
+        "value": [
+          "ISO 9001:2015"
+        ],
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "certification",
+        "source_doc": "rfq"
+      }
+    ],
+    "expected_evidence_fields": {
+      "Zenith Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Summit Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Prism Engineering": [
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ]
+    },
+    "expected_abstention": false
+  },
+  "retrieval_tasks": [
+    {
+      "id": "retr-bench-038-0",
+      "query": "Who quoted for EN8 bright round bar?",
+      "expected_doc_ids": [
+        "quote_zenith_industries.pdf",
+        "quote_summit_industries.pdf",
+        "quote_prism_engineering.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-038-1",
+      "query": "What is the required quantity?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-038-2",
+      "query": "What is the maximum budget?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-038-3",
+      "query": "Which certifications are mandatory?",
+      "expected_doc_ids": [
+        "rfq.pdf",
+        "policy.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-038-4",
+      "query": "Delivery commitment of Zenith Industries",
+      "expected_doc_ids": [
+        "quote_zenith_industries.pdf"
+      ]
+    }
+  ],
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ]
+}

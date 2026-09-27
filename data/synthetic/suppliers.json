@@ -1,0 +1,609 @@
+{
+  "synthetic": true,
+  "disclaimer": "All suppliers in this roster are fictional. No entity or transaction represents a real organisation.",
+  "seed": "supplier-v1",
+  "suppliers": [
+    {
+      "name": "Vulcan Industries",
+      "country": "IN",
+      "price_factor": 1.007,
+      "delivery_days": 22,
+      "families": [
+        "stainless-steel",
+        "carbon-steel"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "ISO 14001:2015",
+      "payment_terms": "31 days net",
+      "bid_validity": 62,
+      "seed_index": 0
+    },
+    {
+      "name": "Meridian Industries",
+      "country": "IN",
+      "price_factor": 0.88,
+      "delivery_days": 46,
+      "families": [
+        "stainless-steel"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "ISO 45001:2018",
+      "payment_terms": "18 days net",
+      "bid_validity": 70,
+      "seed_index": 1
+    },
+    {
+      "name": "Apex Industries",
+      "country": "IN",
+      "price_factor": 1.137,
+      "delivery_days": 24,
+      "families": [
+        "carbon-steel",
+        "brass"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "CE",
+      "payment_terms": "39 days net",
+      "bid_validity": 72,
+      "seed_index": 2
+    },
+    {
+      "name": "Sterling Industries",
+      "country": "IN",
+      "price_factor": 1.066,
+      "delivery_days": 23,
+      "families": [
+        "copper",
+        "aluminium"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "API Q1",
+      "payment_terms": "20 days net",
+      "bid_validity": 51,
+      "seed_index": 3
+    },
+    {
+      "name": "Prism Industries",
+      "country": "IN",
+      "price_factor": 1.125,
+      "delivery_days": 43,
+      "families": [
+        "aluminium",
+        "stainless-steel"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "IS 13000",
+      "payment_terms": "33 days net",
+      "bid_validity": 50,
+      "seed_index": 4
+    },
+    {
+      "name": "Harbinger Industries",
+      "country": "IN",
+      "price_factor": 0.943,
+      "delivery_days": 23,
+      "families": [
+        "hdpe",
+        "gi"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "TUV",
+      "payment_terms": "35 days net",
+      "bid_validity": 60,
+      "seed_index": 5
+    },
+    {
+      "name": "Cobalt Industries",
+      "country": "IN",
+      "price_factor": 0.911,
+      "delivery_days": 15,
+      "families": [
+        "brass"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "BEE",
+      "payment_terms": "18 days net",
+      "bid_validity": 57,
+      "seed_index": 6
+    },
+    {
+      "name": "Titan Industries",
+      "country": "IN",
+      "price_factor": 1.003,
+      "delivery_days": 33,
+      "families": [
+        "stainless-steel",
+        "carbon-steel"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "ISO 14001:2015",
+      "payment_terms": "32 days net",
+      "bid_validity": 66,
+      "seed_index": 7
+    },
+    {
+      "name": "Quantum Industries",
+      "country": "IN",
+      "price_factor": 0.972,
+      "delivery_days": 26,
+      "families": [
+        "stainless-steel"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "ISO 45001:2018",
+      "payment_terms": "22 days net",
+      "bid_validity": 63,
+      "seed_index": 8
+    },
+    {
+      "name": "Vega Industries",
+      "country": "IN",
+      "price_factor": 0.885,
+      "delivery_days": 24,
+      "families": [
+        "carbon-steel",
+        "brass"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "CE",
+      "payment_terms": "19 days net",
+      "bid_validity": 67,
+      "seed_index": 9
+    },
+    {
+      "name": "Zenith Industries",
+      "country": "IN",
+      "price_factor": 1.186,
+      "delivery_days": 31,
+      "families": [
+        "copper",
+        "aluminium"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "API Q1",
+      "payment_terms": "27 days net",
+      "bid_validity": 64,
+      "seed_index": 10
+    },
+    {
+      "name": "Orion Industries",
+      "country": "IN",
+      "price_factor": 1.012,
+      "delivery_days": 29,
+      "families": [
+        "aluminium",
+        "stainless-steel"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "IS 13000",
+      "payment_terms": "22 days net",
+      "bid_validity": 50,
+      "seed_index": 11
+    },
+    {
+      "name": "Falcon Industries",
+      "country": "IN",
+      "price_factor": 0.844,
+      "delivery_days": 33,
+      "families": [
+        "hdpe",
+        "gi"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "TUV",
+      "payment_terms": "28 days net",
+      "bid_validity": 70,
+      "seed_index": 12
+    },
+    {
+      "name": "Atlas Industries",
+      "country": "IN",
+      "price_factor": 1.007,
+      "delivery_days": 37,
+      "families": [
+        "brass"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "BEE",
+      "payment_terms": "32 days net",
+      "bid_validity": 65,
+      "seed_index": 13
+    },
+    {
+      "name": "Nova Industries",
+      "country": "IN",
+      "price_factor": 1.03,
+      "delivery_days": 35,
+      "families": [
+        "stainless-steel",
+        "carbon-steel"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "ISO 14001:2015",
+      "payment_terms": "40 days net",
+      "bid_validity": 67,
+      "seed_index": 14
+    },
+    {
+      "name": "Ridge Industries",
+      "country": "IN",
+      "price_factor": 0.869,
+      "delivery_days": 39,
+      "families": [
+        "stainless-steel"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "ISO 45001:2018",
+      "payment_terms": "28 days net",
+      "bid_validity": 65,
+      "seed_index": 15
+    },
+    {
+      "name": "Ironwood Industries",
+      "country": "IN",
+      "price_factor": 0.842,
+      "delivery_days": 41,
+      "families": [
+        "carbon-steel",
+        "brass"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "CE",
+      "payment_terms": "44 days net",
+      "bid_validity": 69,
+      "seed_index": 16
+    },
+    {
+      "name": "Summit Industries",
+      "country": "IN",
+      "price_factor": 0.971,
+      "delivery_days": 19,
+      "families": [
+        "copper",
+        "aluminium"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "API Q1",
+      "payment_terms": "21 days net",
+      "bid_validity": 68,
+      "seed_index": 17
+    },
+    {
+      "name": "Pioneer Industries",
+      "country": "IN",
+      "price_factor": 1.123,
+      "delivery_days": 21,
+      "families": [
+        "aluminium",
+        "stainless-steel"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "IS 13000",
+      "payment_terms": "25 days net",
+      "bid_validity": 63,
+      "seed_index": 18
+    },
+    {
+      "name": "Beacon Industries",
+      "country": "IN",
+      "price_factor": 1.193,
+      "delivery_days": 27,
+      "families": [
+        "hdpe",
+        "gi"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "TUV",
+      "payment_terms": "34 days net",
+      "bid_validity": 51,
+      "seed_index": 19
+    },
+    {
+      "name": "Vulcan Engineering",
+      "country": "IN",
+      "price_factor": 1.03,
+      "delivery_days": 15,
+      "families": [
+        "brass"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "BEE",
+      "payment_terms": "29 days net",
+      "bid_validity": 64,
+      "seed_index": 20
+    },
+    {
+      "name": "Meridian Engineering",
+      "country": "IN",
+      "price_factor": 0.957,
+      "delivery_days": 19,
+      "families": [
+        "stainless-steel",
+        "carbon-steel"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "ISO 14001:2015",
+      "payment_terms": "40 days net",
+      "bid_validity": 54,
+      "seed_index": 21
+    },
+    {
+      "name": "Apex Engineering",
+      "country": "IN",
+      "price_factor": 0.971,
+      "delivery_days": 15,
+      "families": [
+        "stainless-steel"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "ISO 45001:2018",
+      "payment_terms": "23 days net",
+      "bid_validity": 59,
+      "seed_index": 22
+    },
+    {
+      "name": "Sterling Engineering",
+      "country": "IN",
+      "price_factor": 0.961,
+      "delivery_days": 36,
+      "families": [
+        "carbon-steel",
+        "brass"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "CE",
+      "payment_terms": "34 days net",
+      "bid_validity": 62,
+      "seed_index": 23
+    },
+    {
+      "name": "Prism Engineering",
+      "country": "IN",
+      "price_factor": 0.886,
+      "delivery_days": 38,
+      "families": [
+        "copper",
+        "aluminium"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "API Q1",
+      "payment_terms": "38 days net",
+      "bid_validity": 53,
+      "seed_index": 24
+    },
+    {
+      "name": "Harbinger Engineering",
+      "country": "IN",
+      "price_factor": 1.132,
+      "delivery_days": 40,
+      "families": [
+        "aluminium",
+        "stainless-steel"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "IS 13000",
+      "payment_terms": "44 days net",
+      "bid_validity": 62,
+      "seed_index": 25
+    },
+    {
+      "name": "Cobalt Engineering",
+      "country": "IN",
+      "price_factor": 1.131,
+      "delivery_days": 18,
+      "families": [
+        "hdpe",
+        "gi"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "TUV",
+      "payment_terms": "15 days net",
+      "bid_validity": 61,
+      "seed_index": 26
+    },
+    {
+      "name": "Titan Engineering",
+      "country": "IN",
+      "price_factor": 0.859,
+      "delivery_days": 35,
+      "families": [
+        "brass"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "BEE",
+      "payment_terms": "27 days net",
+      "bid_validity": 69,
+      "seed_index": 27
+    },
+    {
+      "name": "Quantum Engineering",
+      "country": "IN",
+      "price_factor": 1.017,
+      "delivery_days": 28,
+      "families": [
+        "stainless-steel",
+        "carbon-steel"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "ISO 14001:2015",
+      "payment_terms": "30 days net",
+      "bid_validity": 68,
+      "seed_index": 28
+    },
+    {
+      "name": "Vega Engineering",
+      "country": "IN",
+      "price_factor": 1.03,
+      "delivery_days": 46,
+      "families": [
+        "stainless-steel"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "ISO 45001:2018",
+      "payment_terms": "37 days net",
+      "bid_validity": 62,
+      "seed_index": 29
+    },
+    {
+      "name": "Zenith Engineering",
+      "country": "IN",
+      "price_factor": 0.847,
+      "delivery_days": 26,
+      "families": [
+        "carbon-steel",
+        "brass"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "CE",
+      "payment_terms": "17 days net",
+      "bid_validity": 65,
+      "seed_index": 30
+    },
+    {
+      "name": "Orion Engineering",
+      "country": "IN",
+      "price_factor": 1.106,
+      "delivery_days": 16,
+      "families": [
+        "copper",
+        "aluminium"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "API Q1",
+      "payment_terms": "19 days net",
+      "bid_validity": 68,
+      "seed_index": 31
+    },
+    {
+      "name": "Falcon Engineering",
+      "country": "IN",
+      "price_factor": 1.09,
+      "delivery_days": 33,
+      "families": [
+        "aluminium",
+        "stainless-steel"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "IS 13000",
+      "payment_terms": "38 days net",
+      "bid_validity": 55,
+      "seed_index": 32
+    },
+    {
+      "name": "Atlas Engineering",
+      "country": "IN",
+      "price_factor": 0.813,
+      "delivery_days": 38,
+      "families": [
+        "hdpe",
+        "gi"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "TUV",
+      "payment_terms": "24 days net",
+      "bid_validity": 50,
+      "seed_index": 33
+    },
+    {
+      "name": "Nova Engineering",
+      "country": "IN",
+      "price_factor": 1.106,
+      "delivery_days": 26,
+      "families": [
+        "brass"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "BEE",
+      "payment_terms": "23 days net",
+      "bid_validity": 72,
+      "seed_index": 34
+    },
+    {
+      "name": "Ridge Engineering",
+      "country": "IN",
+      "price_factor": 0.848,
+      "delivery_days": 18,
+      "families": [
+        "stainless-steel",
+        "carbon-steel"
+      ],
+      "base_certs": [
+        "ISO 9001:2015"
+      ],
+      "extra_cert": "ISO 14001:2015",
+      "payment_terms": "28 days net",
+      "bid_validity": 70,
+      "seed_index": 35
+    }
+  ]
+}

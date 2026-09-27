@@ -1,0 +1,336 @@
+{
+  "case_id": "bench-011",
+  "title": "Compliance shortlist — Brass gate valve DN50",
+  "template": "compliance",
+  "variant": 11,
+  "seed": "case-v1:11",
+  "material_id": "brass-valve",
+  "case_date": "2025-07-18",
+  "synthetic": true,
+  "tags": [
+    "material_mismatch",
+    "price_over"
+  ],
+  "documents": {
+    "rfq": "rfq.pdf",
+    "spec": "spec.pdf",
+    "policy": "policy.pdf",
+    "quote_0": "quote_beacon_industries.pdf",
+    "certificates_0": "certificates_beacon_industries.pdf",
+    "history_0": "history_beacon_industries.pdf",
+    "quote_1": "quote_cobalt_engineering.pdf",
+    "certificates_1": "certificates_cobalt_engineering.pdf",
+    "history_1": "history_cobalt_engineering.pdf",
+    "quote_2": "quote_atlas_engineering.pdf",
+    "certificates_2": "certificates_atlas_engineering.pdf",
+    "history_2": "history_atlas_engineering.pdf"
+  },
+  "authoring_requirements": [
+    {
+      "field": "material",
+      "operator": "eq",
+      "value": "Brass",
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "material",
+      "source_doc": "spec"
+    },
+    {
+      "field": "quantity",
+      "operator": "gte",
+      "value": 103.0,
+      "unit": "unit",
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "quantity",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "price",
+      "operator": "lte",
+      "value": 173800.0,
+      "unit": null,
+      "currency": "INR",
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_price",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "delivery_days",
+      "operator": "lte",
+      "value": 30.0,
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_delivery",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "certification",
+      "operator": "in",
+      "value": [
+        "ISO 9001:2015"
+      ],
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "certification",
+      "source_doc": "rfq"
+    }
+  ],
+  "authoring_suppliers": [
+    {
+      "supplier": "Beacon Industries",
+      "outcome": "PASS",
+      "reason_categories": [],
+      "material": "Brass",
+      "quantity": 103.0,
+      "quantity_unit": "unit",
+      "total_price": 156420.0,
+      "currency": "INR",
+      "delivery_days": 23,
+      "delivery_text": "within 23 days",
+      "payment_terms": "34 days net",
+      "bid_validity": 51,
+      "warranty_months": 12,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-21",
+          "expiry": "2027-07-18",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "plain",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Cobalt Engineering",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "price_over"
+      ],
+      "material": "Brass",
+      "quantity": 103.0,
+      "quantity_unit": "unit",
+      "total_price": 243320.0,
+      "currency": "INR",
+      "delivery_days": 29,
+      "delivery_text": "within 29 days",
+      "payment_terms": "15 days net",
+      "bid_validity": 61,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-21",
+          "expiry": "2027-07-18",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "indian",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Atlas Engineering",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "material_mismatch"
+      ],
+      "material": "MS",
+      "quantity": 103.0,
+      "quantity_unit": "unit",
+      "total_price": 130350.0,
+      "currency": "INR",
+      "delivery_days": 28,
+      "delivery_text": "within 28 days",
+      "payment_terms": "24 days net",
+      "bid_validity": 50,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-21",
+          "expiry": "2027-07-18",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "plain",
+        "slot": 0
+      },
+      "notes": ""
+    }
+  ],
+  "policy": {
+    "enabled": false,
+    "approval_threshold": null,
+    "mandatory_certs": [
+      "ISO 9001:2015"
+    ]
+  },
+  "ground_truth": {
+    "expected_recommendation": "Beacon Industries",
+    "expected_status": "recommended",
+    "expected_outcomes": {
+      "Beacon Industries": {
+        "status": "PASS",
+        "reasons": []
+      },
+      "Cobalt Engineering": {
+        "status": "FAIL",
+        "reasons": [
+          "price_over"
+        ]
+      },
+      "Atlas Engineering": {
+        "status": "FAIL",
+        "reasons": [
+          "material_mismatch"
+        ]
+      }
+    },
+    "expected_requirements": [
+      {
+        "field": "material",
+        "operator": "eq",
+        "value": "Brass",
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "material",
+        "source_doc": "spec"
+      },
+      {
+        "field": "quantity",
+        "operator": "gte",
+        "value": 103.0,
+        "unit": "unit",
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "quantity",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "price",
+        "operator": "lte",
+        "value": 173800.0,
+        "unit": null,
+        "currency": "INR",
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_price",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "delivery_days",
+        "operator": "lte",
+        "value": 30.0,
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_delivery",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "certification",
+        "operator": "in",
+        "value": [
+          "ISO 9001:2015"
+        ],
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "certification",
+        "source_doc": "rfq"
+      }
+    ],
+    "expected_evidence_fields": {
+      "Beacon Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Cobalt Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Atlas Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ]
+    },
+    "expected_abstention": false
+  },
+  "retrieval_tasks": [
+    {
+      "id": "retr-bench-011-0",
+      "query": "Who quoted for Brass gate valve DN50?",
+      "expected_doc_ids": [
+        "quote_beacon_industries.pdf",
+        "quote_cobalt_engineering.pdf",
+        "quote_atlas_engineering.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-011-1",
+      "query": "What is the required quantity?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-011-2",
+      "query": "What is the maximum budget?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-011-3",
+      "query": "Which certifications are mandatory?",
+      "expected_doc_ids": [
+        "rfq.pdf",
+        "policy.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-011-4",
+      "query": "Delivery commitment of Beacon Industries",
+      "expected_doc_ids": [
+        "quote_beacon_industries.pdf"
+      ]
+    }
+  ],
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ]
+}

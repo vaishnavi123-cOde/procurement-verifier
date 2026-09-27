@@ -1,0 +1,330 @@
+{
+  "case_id": "bench-039",
+  "title": "Withhold on unverifiable claims — SS 316L seamless pipe",
+  "template": "unverifiable",
+  "variant": 39,
+  "seed": "case-v1:39",
+  "material_id": "ss316l-pipe",
+  "case_date": "2025-06-24",
+  "synthetic": true,
+  "tags": [
+    "abstention",
+    "insufficient",
+    "missing_field"
+  ],
+  "documents": {
+    "rfq": "rfq.pdf",
+    "spec": "spec.pdf",
+    "policy": "policy.pdf",
+    "quote_0": "quote_ridge_industries.pdf",
+    "certificates_0": "certificates_ridge_industries.pdf",
+    "history_0": "history_ridge_industries.pdf",
+    "quote_1": "quote_apex_engineering.pdf",
+    "history_1": "history_apex_engineering.pdf",
+    "quote_2": "quote_vega_engineering.pdf",
+    "certificates_2": "certificates_vega_engineering.pdf",
+    "history_2": "history_vega_engineering.pdf"
+  },
+  "authoring_requirements": [
+    {
+      "field": "material",
+      "operator": "eq",
+      "value": "SS 316L",
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "material",
+      "source_doc": "spec"
+    },
+    {
+      "field": "quantity",
+      "operator": "gte",
+      "value": 1846.0,
+      "unit": "m",
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "quantity",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "price",
+      "operator": "lte",
+      "value": 3613500.0,
+      "unit": null,
+      "currency": "INR",
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_price",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "delivery_days",
+      "operator": "lte",
+      "value": 45.0,
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_delivery",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "certification",
+      "operator": "in",
+      "value": [
+        "ISO 9001:2015"
+      ],
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "certification",
+      "source_doc": "rfq"
+    }
+  ],
+  "authoring_suppliers": [
+    {
+      "supplier": "Ridge Industries",
+      "outcome": "UNVERIFIED",
+      "reason_categories": [
+        "missing_price"
+      ],
+      "material": "SS 316L",
+      "quantity": 1846.0,
+      "quantity_unit": "m",
+      "total_price": null,
+      "currency": "INR",
+      "delivery_days": 36,
+      "delivery_text": "within 36 days",
+      "payment_terms": "28 days net",
+      "bid_validity": 65,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-08-28",
+          "expiry": "2027-06-24",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Apex Engineering",
+      "outcome": "UNVERIFIED",
+      "reason_categories": [
+        "missing_price",
+        "missing_cert"
+      ],
+      "material": "SS 316L",
+      "quantity": 1846.0,
+      "quantity_unit": "m",
+      "total_price": null,
+      "currency": "INR",
+      "delivery_days": 38,
+      "delivery_text": "within 38 days",
+      "payment_terms": "23 days net",
+      "bid_validity": 59,
+      "warranty_months": null,
+      "certs": [],
+      "formatting": {
+        "price_style": "plain",
+        "slot": 1
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Vega Engineering",
+      "outcome": "UNVERIFIED",
+      "reason_categories": [
+        "missing_field"
+      ],
+      "material": "SS 316L",
+      "quantity": 1846.0,
+      "quantity_unit": "m",
+      "total_price": 2890800.0,
+      "currency": "INR",
+      "delivery_days": null,
+      "delivery_text": null,
+      "payment_terms": null,
+      "bid_validity": 62,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-08-28",
+          "expiry": "2027-06-24",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "plain",
+        "slot": 2
+      },
+      "notes": ""
+    }
+  ],
+  "policy": {
+    "enabled": false,
+    "approval_threshold": null,
+    "mandatory_certs": [
+      "ISO 9001:2015"
+    ]
+  },
+  "ground_truth": {
+    "expected_recommendation": null,
+    "expected_status": "insufficient",
+    "expected_outcomes": {
+      "Ridge Industries": {
+        "status": "UNVERIFIED",
+        "reasons": [
+          "missing_price"
+        ]
+      },
+      "Apex Engineering": {
+        "status": "UNVERIFIED",
+        "reasons": [
+          "missing_price",
+          "missing_cert"
+        ]
+      },
+      "Vega Engineering": {
+        "status": "UNVERIFIED",
+        "reasons": [
+          "missing_field"
+        ]
+      }
+    },
+    "expected_requirements": [
+      {
+        "field": "material",
+        "operator": "eq",
+        "value": "SS 316L",
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "material",
+        "source_doc": "spec"
+      },
+      {
+        "field": "quantity",
+        "operator": "gte",
+        "value": 1846.0,
+        "unit": "m",
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "quantity",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "price",
+        "operator": "lte",
+        "value": 3613500.0,
+        "unit": null,
+        "currency": "INR",
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_price",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "delivery_days",
+        "operator": "lte",
+        "value": 45.0,
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_delivery",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "certification",
+        "operator": "in",
+        "value": [
+          "ISO 9001:2015"
+        ],
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "certification",
+        "source_doc": "rfq"
+      }
+    ],
+    "expected_evidence_fields": {
+      "Ridge Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "delivery_days"
+      ],
+      "Apex Engineering": [
+        "material",
+        "quantity",
+        "delivery_days"
+      ],
+      "Vega Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "price"
+      ]
+    },
+    "expected_abstention": true
+  },
+  "retrieval_tasks": [
+    {
+      "id": "retr-bench-039-0",
+      "query": "Who quoted for SS 316L seamless pipe?",
+      "expected_doc_ids": [
+        "quote_ridge_industries.pdf",
+        "quote_apex_engineering.pdf",
+        "quote_vega_engineering.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-039-1",
+      "query": "What is the required quantity?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-039-2",
+      "query": "What is the maximum budget?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-039-3",
+      "query": "Which certifications are mandatory?",
+      "expected_doc_ids": [
+        "rfq.pdf",
+        "policy.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-039-4",
+      "query": "Delivery commitment of Ridge Industries",
+      "expected_doc_ids": [
+        "quote_ridge_industries.pdf"
+      ]
+    }
+  ],
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ]
+}

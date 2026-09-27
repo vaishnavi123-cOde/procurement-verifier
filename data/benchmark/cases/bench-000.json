@@ -1,0 +1,336 @@
+{
+  "case_id": "bench-000",
+  "title": "Compliance shortlist — SS 316L seamless pipe",
+  "template": "compliance",
+  "variant": 0,
+  "seed": "case-v1:0",
+  "material_id": "ss316l-pipe",
+  "case_date": "2025-06-15",
+  "synthetic": true,
+  "tags": [
+    "material_mismatch",
+    "price_over"
+  ],
+  "documents": {
+    "rfq": "rfq.pdf",
+    "spec": "spec.pdf",
+    "policy": "policy.pdf",
+    "quote_0": "quote_vulcan_industries.pdf",
+    "certificates_0": "certificates_vulcan_industries.pdf",
+    "history_0": "history_vulcan_industries.pdf",
+    "quote_1": "quote_titan_industries.pdf",
+    "certificates_1": "certificates_titan_industries.pdf",
+    "history_1": "history_titan_industries.pdf",
+    "quote_2": "quote_nova_industries.pdf",
+    "certificates_2": "certificates_nova_industries.pdf",
+    "history_2": "history_nova_industries.pdf"
+  },
+  "authoring_requirements": [
+    {
+      "field": "material",
+      "operator": "eq",
+      "value": "SS 316L",
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "material",
+      "source_doc": "spec"
+    },
+    {
+      "field": "quantity",
+      "operator": "gte",
+      "value": 612.0,
+      "unit": "m",
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "quantity",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "price",
+      "operator": "lte",
+      "value": 1198000.0,
+      "unit": null,
+      "currency": "INR",
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_price",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "delivery_days",
+      "operator": "lte",
+      "value": 30.0,
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_delivery",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "certification",
+      "operator": "in",
+      "value": [
+        "ISO 9001:2015"
+      ],
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "certification",
+      "source_doc": "rfq"
+    }
+  ],
+  "authoring_suppliers": [
+    {
+      "supplier": "Vulcan Industries",
+      "outcome": "PASS",
+      "reason_categories": [],
+      "material": "SS 316L",
+      "quantity": 612.0,
+      "quantity_unit": "m",
+      "total_price": 1078200.0,
+      "currency": "INR",
+      "delivery_days": 27,
+      "delivery_text": "within 27 days",
+      "payment_terms": "31 days net",
+      "bid_validity": 62,
+      "warranty_months": 12,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-08-19",
+          "expiry": "2027-06-15",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "indian",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Titan Industries",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "price_over"
+      ],
+      "material": "SS 316L",
+      "quantity": 612.0,
+      "quantity_unit": "m",
+      "total_price": 1677200.0,
+      "currency": "INR",
+      "delivery_days": 23,
+      "delivery_text": "within 23 days",
+      "payment_terms": "32 days net",
+      "bid_validity": 66,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-08-19",
+          "expiry": "2027-06-15",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "indian",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Nova Industries",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "material_mismatch"
+      ],
+      "material": "SS 316",
+      "quantity": 612.0,
+      "quantity_unit": "m",
+      "total_price": 898500.0,
+      "currency": "INR",
+      "delivery_days": 25,
+      "delivery_text": "within 25 days",
+      "payment_terms": "40 days net",
+      "bid_validity": 67,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-08-19",
+          "expiry": "2027-06-15",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "indian",
+        "slot": 0
+      },
+      "notes": ""
+    }
+  ],
+  "policy": {
+    "enabled": false,
+    "approval_threshold": null,
+    "mandatory_certs": [
+      "ISO 9001:2015"
+    ]
+  },
+  "ground_truth": {
+    "expected_recommendation": "Vulcan Industries",
+    "expected_status": "recommended",
+    "expected_outcomes": {
+      "Vulcan Industries": {
+        "status": "PASS",
+        "reasons": []
+      },
+      "Titan Industries": {
+        "status": "FAIL",
+        "reasons": [
+          "price_over"
+        ]
+      },
+      "Nova Industries": {
+        "status": "FAIL",
+        "reasons": [
+          "material_mismatch"
+        ]
+      }
+    },
+    "expected_requirements": [
+      {
+        "field": "material",
+        "operator": "eq",
+        "value": "SS 316L",
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "material",
+        "source_doc": "spec"
+      },
+      {
+        "field": "quantity",
+        "operator": "gte",
+        "value": 612.0,
+        "unit": "m",
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "quantity",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "price",
+        "operator": "lte",
+        "value": 1198000.0,
+        "unit": null,
+        "currency": "INR",
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_price",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "delivery_days",
+        "operator": "lte",
+        "value": 30.0,
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_delivery",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "certification",
+        "operator": "in",
+        "value": [
+          "ISO 9001:2015"
+        ],
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "certification",
+        "source_doc": "rfq"
+      }
+    ],
+    "expected_evidence_fields": {
+      "Vulcan Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Titan Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Nova Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ]
+    },
+    "expected_abstention": false
+  },
+  "retrieval_tasks": [
+    {
+      "id": "retr-bench-000-0",
+      "query": "Who quoted for SS 316L seamless pipe?",
+      "expected_doc_ids": [
+        "quote_vulcan_industries.pdf",
+        "quote_titan_industries.pdf",
+        "quote_nova_industries.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-000-1",
+      "query": "What is the required quantity?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-000-2",
+      "query": "What is the maximum budget?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-000-3",
+      "query": "Which certifications are mandatory?",
+      "expected_doc_ids": [
+        "rfq.pdf",
+        "policy.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-000-4",
+      "query": "Delivery commitment of Vulcan Industries",
+      "expected_doc_ids": [
+        "quote_vulcan_industries.pdf"
+      ]
+    }
+  ],
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ]
+}

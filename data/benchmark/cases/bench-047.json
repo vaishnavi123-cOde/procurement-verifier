@@ -1,0 +1,330 @@
+{
+  "case_id": "bench-047",
+  "title": "Withhold recommendation — Aluminium 6061 T6 bar",
+  "template": "abstention",
+  "variant": 47,
+  "seed": "case-v1:47",
+  "material_id": "al6061-bar",
+  "case_date": "2025-07-18",
+  "synthetic": true,
+  "tags": [
+    "abstention",
+    "no_valid"
+  ],
+  "documents": {
+    "rfq": "rfq.pdf",
+    "spec": "spec.pdf",
+    "policy": "policy.pdf",
+    "quote_0": "quote_beacon_industries.pdf",
+    "certificates_0": "certificates_beacon_industries.pdf",
+    "history_0": "history_beacon_industries.pdf",
+    "quote_1": "quote_cobalt_engineering.pdf",
+    "history_1": "history_cobalt_engineering.pdf",
+    "quote_2": "quote_atlas_engineering.pdf",
+    "certificates_2": "certificates_atlas_engineering.pdf",
+    "history_2": "history_atlas_engineering.pdf"
+  },
+  "authoring_requirements": [
+    {
+      "field": "material",
+      "operator": "eq",
+      "value": "AL 6061",
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "material",
+      "source_doc": "spec"
+    },
+    {
+      "field": "quantity",
+      "operator": "gte",
+      "value": 957.0,
+      "unit": "kg",
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "quantity",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "price",
+      "operator": "lte",
+      "value": 374700.0,
+      "unit": null,
+      "currency": "INR",
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_price",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "delivery_days",
+      "operator": "lte",
+      "value": 30.0,
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_delivery",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "certification",
+      "operator": "in",
+      "value": [
+        "ISO 9001:2015"
+      ],
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "certification",
+      "source_doc": "rfq"
+    }
+  ],
+  "authoring_suppliers": [
+    {
+      "supplier": "Beacon Industries",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "price_over"
+      ],
+      "material": "AL 6061",
+      "quantity": 957.0,
+      "quantity_unit": "kg",
+      "total_price": 599520.0,
+      "currency": "INR",
+      "delivery_days": 26,
+      "delivery_text": "within 26 days",
+      "payment_terms": "34 days net",
+      "bid_validity": 51,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-21",
+          "expiry": "2027-07-18",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "indian",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Cobalt Engineering",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "missing_cert"
+      ],
+      "material": "AL 6061",
+      "quantity": 957.0,
+      "quantity_unit": "kg",
+      "total_price": 243555.0,
+      "currency": "INR",
+      "delivery_days": 25,
+      "delivery_text": "within 25 days",
+      "payment_terms": "15 days net",
+      "bid_validity": 61,
+      "warranty_months": null,
+      "certs": [],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 1
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Atlas Engineering",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "material_mismatch"
+      ],
+      "material": "MS",
+      "quantity": 957.0,
+      "quantity_unit": "kg",
+      "total_price": 206085.0,
+      "currency": "INR",
+      "delivery_days": 21,
+      "delivery_text": "within 21 days",
+      "payment_terms": "24 days net",
+      "bid_validity": 50,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-21",
+          "expiry": "2027-07-18",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "plain",
+        "slot": 2
+      },
+      "notes": ""
+    }
+  ],
+  "policy": {
+    "enabled": false,
+    "approval_threshold": null,
+    "mandatory_certs": [
+      "ISO 9001:2015"
+    ]
+  },
+  "ground_truth": {
+    "expected_recommendation": null,
+    "expected_status": "no_valid",
+    "expected_outcomes": {
+      "Beacon Industries": {
+        "status": "FAIL",
+        "reasons": [
+          "price_over"
+        ]
+      },
+      "Cobalt Engineering": {
+        "status": "FAIL",
+        "reasons": [
+          "missing_cert"
+        ]
+      },
+      "Atlas Engineering": {
+        "status": "FAIL",
+        "reasons": [
+          "material_mismatch"
+        ]
+      }
+    },
+    "expected_requirements": [
+      {
+        "field": "material",
+        "operator": "eq",
+        "value": "AL 6061",
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "material",
+        "source_doc": "spec"
+      },
+      {
+        "field": "quantity",
+        "operator": "gte",
+        "value": 957.0,
+        "unit": "kg",
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "quantity",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "price",
+        "operator": "lte",
+        "value": 374700.0,
+        "unit": null,
+        "currency": "INR",
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_price",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "delivery_days",
+        "operator": "lte",
+        "value": 30.0,
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_delivery",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "certification",
+        "operator": "in",
+        "value": [
+          "ISO 9001:2015"
+        ],
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "certification",
+        "source_doc": "rfq"
+      }
+    ],
+    "expected_evidence_fields": {
+      "Beacon Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Cobalt Engineering": [
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Atlas Engineering": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ]
+    },
+    "expected_abstention": true
+  },
+  "retrieval_tasks": [
+    {
+      "id": "retr-bench-047-0",
+      "query": "Who quoted for Aluminium 6061 T6 bar?",
+      "expected_doc_ids": [
+        "quote_beacon_industries.pdf",
+        "quote_cobalt_engineering.pdf",
+        "quote_atlas_engineering.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-047-1",
+      "query": "What is the required quantity?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-047-2",
+      "query": "What is the maximum budget?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-047-3",
+      "query": "Which certifications are mandatory?",
+      "expected_doc_ids": [
+        "rfq.pdf",
+        "policy.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-047-4",
+      "query": "Delivery commitment of Beacon Industries",
+      "expected_doc_ids": [
+        "quote_beacon_industries.pdf"
+      ]
+    }
+  ],
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ]
+}

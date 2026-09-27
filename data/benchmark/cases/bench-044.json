@@ -1,0 +1,330 @@
+{
+  "case_id": "bench-044",
+  "title": "Withhold on unverifiable claims — Aluminium 6061 T6 bar",
+  "template": "unverifiable",
+  "variant": 44,
+  "seed": "case-v1:44",
+  "material_id": "al6061-bar",
+  "case_date": "2025-07-09",
+  "synthetic": true,
+  "tags": [
+    "abstention",
+    "insufficient",
+    "missing_field"
+  ],
+  "documents": {
+    "rfq": "rfq.pdf",
+    "spec": "spec.pdf",
+    "policy": "policy.pdf",
+    "quote_0": "quote_prism_industries.pdf",
+    "certificates_0": "certificates_prism_industries.pdf",
+    "history_0": "history_prism_industries.pdf",
+    "quote_1": "quote_orion_industries.pdf",
+    "history_1": "history_orion_industries.pdf",
+    "quote_2": "quote_pioneer_industries.pdf",
+    "certificates_2": "certificates_pioneer_industries.pdf",
+    "history_2": "history_pioneer_industries.pdf"
+  },
+  "authoring_requirements": [
+    {
+      "field": "material",
+      "operator": "eq",
+      "value": "AL 6061",
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "material",
+      "source_doc": "spec"
+    },
+    {
+      "field": "quantity",
+      "operator": "gte",
+      "value": 2209.0,
+      "unit": "kg",
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "quantity",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "price",
+      "operator": "lte",
+      "value": 864800.0,
+      "unit": null,
+      "currency": "INR",
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_price",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "delivery_days",
+      "operator": "lte",
+      "value": 30.0,
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_delivery",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "certification",
+      "operator": "in",
+      "value": [
+        "ISO 9001:2015"
+      ],
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "certification",
+      "source_doc": "rfq"
+    }
+  ],
+  "authoring_suppliers": [
+    {
+      "supplier": "Prism Industries",
+      "outcome": "UNVERIFIED",
+      "reason_categories": [
+        "missing_price"
+      ],
+      "material": "AL 6061",
+      "quantity": 2209.0,
+      "quantity_unit": "kg",
+      "total_price": null,
+      "currency": "INR",
+      "delivery_days": 27,
+      "delivery_text": "within 27 days",
+      "payment_terms": "33 days net",
+      "bid_validity": 50,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-12",
+          "expiry": "2027-07-09",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "indian",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Orion Industries",
+      "outcome": "UNVERIFIED",
+      "reason_categories": [
+        "missing_price",
+        "missing_cert"
+      ],
+      "material": "AL 6061",
+      "quantity": 2209.0,
+      "quantity_unit": "kg",
+      "total_price": null,
+      "currency": "INR",
+      "delivery_days": 29,
+      "delivery_text": "within 29 days",
+      "payment_terms": "22 days net",
+      "bid_validity": 50,
+      "warranty_months": null,
+      "certs": [],
+      "formatting": {
+        "price_style": "lakh",
+        "slot": 1
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Pioneer Industries",
+      "outcome": "UNVERIFIED",
+      "reason_categories": [
+        "missing_field"
+      ],
+      "material": "AL 6061",
+      "quantity": 2209.0,
+      "quantity_unit": "kg",
+      "total_price": 691840.0,
+      "currency": "INR",
+      "delivery_days": null,
+      "delivery_text": null,
+      "payment_terms": null,
+      "bid_validity": 63,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-12",
+          "expiry": "2027-07-09",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "plain",
+        "slot": 2
+      },
+      "notes": ""
+    }
+  ],
+  "policy": {
+    "enabled": false,
+    "approval_threshold": null,
+    "mandatory_certs": [
+      "ISO 9001:2015"
+    ]
+  },
+  "ground_truth": {
+    "expected_recommendation": null,
+    "expected_status": "insufficient",
+    "expected_outcomes": {
+      "Prism Industries": {
+        "status": "UNVERIFIED",
+        "reasons": [
+          "missing_price"
+        ]
+      },
+      "Orion Industries": {
+        "status": "UNVERIFIED",
+        "reasons": [
+          "missing_price",
+          "missing_cert"
+        ]
+      },
+      "Pioneer Industries": {
+        "status": "UNVERIFIED",
+        "reasons": [
+          "missing_field"
+        ]
+      }
+    },
+    "expected_requirements": [
+      {
+        "field": "material",
+        "operator": "eq",
+        "value": "AL 6061",
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "material",
+        "source_doc": "spec"
+      },
+      {
+        "field": "quantity",
+        "operator": "gte",
+        "value": 2209.0,
+        "unit": "kg",
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "quantity",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "price",
+        "operator": "lte",
+        "value": 864800.0,
+        "unit": null,
+        "currency": "INR",
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_price",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "delivery_days",
+        "operator": "lte",
+        "value": 30.0,
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_delivery",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "certification",
+        "operator": "in",
+        "value": [
+          "ISO 9001:2015"
+        ],
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "certification",
+        "source_doc": "rfq"
+      }
+    ],
+    "expected_evidence_fields": {
+      "Prism Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "delivery_days"
+      ],
+      "Orion Industries": [
+        "material",
+        "quantity",
+        "delivery_days"
+      ],
+      "Pioneer Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price"
+      ]
+    },
+    "expected_abstention": true
+  },
+  "retrieval_tasks": [
+    {
+      "id": "retr-bench-044-0",
+      "query": "Who quoted for Aluminium 6061 T6 bar?",
+      "expected_doc_ids": [
+        "quote_prism_industries.pdf",
+        "quote_orion_industries.pdf",
+        "quote_pioneer_industries.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-044-1",
+      "query": "What is the required quantity?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-044-2",
+      "query": "What is the maximum budget?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-044-3",
+      "query": "Which certifications are mandatory?",
+      "expected_doc_ids": [
+        "rfq.pdf",
+        "policy.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-044-4",
+      "query": "Delivery commitment of Prism Industries",
+      "expected_doc_ids": [
+        "quote_prism_industries.pdf"
+      ]
+    }
+  ],
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ]
+}

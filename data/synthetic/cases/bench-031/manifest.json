@@ -1,0 +1,332 @@
+{
+  "case_id": "bench-031",
+  "title": "Foreign currency pricing — Mild steel plate",
+  "template": "currency_fx",
+  "variant": 31,
+  "seed": "case-v1:31",
+  "material_id": "ms-plate",
+  "case_date": "2025-07-06",
+  "synthetic": true,
+  "tags": [
+    "currency_fx",
+    "price_ok_foreign",
+    "price_over_foreign",
+    "missing_cert"
+  ],
+  "documents": {
+    "rfq": "rfq.pdf",
+    "spec": "spec.pdf",
+    "policy": "policy.pdf",
+    "quote_0": "quote_orion_industries.pdf",
+    "certificates_0": "certificates_orion_industries.pdf",
+    "history_0": "history_orion_industries.pdf",
+    "quote_1": "quote_pioneer_industries.pdf",
+    "certificates_1": "certificates_pioneer_industries.pdf",
+    "history_1": "history_pioneer_industries.pdf",
+    "quote_2": "quote_harbinger_engineering.pdf",
+    "history_2": "history_harbinger_engineering.pdf"
+  },
+  "authoring_requirements": [
+    {
+      "field": "material",
+      "operator": "eq",
+      "value": "MS",
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "material",
+      "source_doc": "spec"
+    },
+    {
+      "field": "quantity",
+      "operator": "gte",
+      "value": 4192.0,
+      "unit": "kg",
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "quantity",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "price",
+      "operator": "lte",
+      "value": 328200.0,
+      "unit": null,
+      "currency": "INR",
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_price",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "delivery_days",
+      "operator": "lte",
+      "value": 30.0,
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "max_delivery",
+      "source_doc": "rfq"
+    },
+    {
+      "field": "certification",
+      "operator": "in",
+      "value": [
+        "ISO 9001:2015"
+      ],
+      "unit": null,
+      "currency": null,
+      "mandatory": true,
+      "tolerance": null,
+      "label": "certification",
+      "source_doc": "rfq"
+    }
+  ],
+  "authoring_suppliers": [
+    {
+      "supplier": "Orion Industries",
+      "outcome": "PASS",
+      "reason_categories": [
+        "price_ok_foreign"
+      ],
+      "material": "MS",
+      "quantity": 4192.0,
+      "quantity_unit": "kg",
+      "total_price": 3711.79,
+      "currency": "USD",
+      "delivery_days": 25,
+      "delivery_text": "within 25 days",
+      "payment_terms": "22 days net",
+      "bid_validity": 50,
+      "warranty_months": 12,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-09",
+          "expiry": "2027-07-06",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "plain",
+        "slot": 0
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Pioneer Industries",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "price_over_foreign"
+      ],
+      "material": "MS",
+      "quantity": 4192.0,
+      "quantity_unit": "kg",
+      "total_price": 5470.0,
+      "currency": "USD",
+      "delivery_days": 21,
+      "delivery_text": "within 21 days",
+      "payment_terms": "25 days net",
+      "bid_validity": 63,
+      "warranty_months": null,
+      "certs": [
+        {
+          "name": "ISO 9001:2015",
+          "issue": "2024-09-09",
+          "expiry": "2027-07-06",
+          "quoted": true,
+          "certificated": true
+        }
+      ],
+      "formatting": {
+        "price_style": "indian",
+        "slot": 1
+      },
+      "notes": ""
+    },
+    {
+      "supplier": "Harbinger Engineering",
+      "outcome": "FAIL",
+      "reason_categories": [
+        "missing_cert"
+      ],
+      "material": "MS",
+      "quantity": 4192.0,
+      "quantity_unit": "kg",
+      "total_price": 229740.0,
+      "currency": "INR",
+      "delivery_days": 24,
+      "delivery_text": "within 24 days",
+      "payment_terms": "44 days net",
+      "bid_validity": 62,
+      "warranty_months": null,
+      "certs": [],
+      "formatting": {
+        "price_style": "plain",
+        "slot": 2
+      },
+      "notes": ""
+    }
+  ],
+  "policy": {
+    "enabled": false,
+    "approval_threshold": null,
+    "mandatory_certs": [
+      "ISO 9001:2015"
+    ]
+  },
+  "ground_truth": {
+    "expected_recommendation": "Orion Industries",
+    "expected_status": "recommended",
+    "expected_outcomes": {
+      "Orion Industries": {
+        "status": "PASS",
+        "reasons": [
+          "price_ok_foreign"
+        ]
+      },
+      "Pioneer Industries": {
+        "status": "FAIL",
+        "reasons": [
+          "price_over_foreign"
+        ]
+      },
+      "Harbinger Engineering": {
+        "status": "FAIL",
+        "reasons": [
+          "missing_cert"
+        ]
+      }
+    },
+    "expected_requirements": [
+      {
+        "field": "material",
+        "operator": "eq",
+        "value": "MS",
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "material",
+        "source_doc": "spec"
+      },
+      {
+        "field": "quantity",
+        "operator": "gte",
+        "value": 4192.0,
+        "unit": "kg",
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "quantity",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "price",
+        "operator": "lte",
+        "value": 328200.0,
+        "unit": null,
+        "currency": "INR",
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_price",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "delivery_days",
+        "operator": "lte",
+        "value": 30.0,
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "max_delivery",
+        "source_doc": "rfq"
+      },
+      {
+        "field": "certification",
+        "operator": "in",
+        "value": [
+          "ISO 9001:2015"
+        ],
+        "unit": null,
+        "currency": null,
+        "mandatory": true,
+        "tolerance": null,
+        "label": "certification",
+        "source_doc": "rfq"
+      }
+    ],
+    "expected_evidence_fields": {
+      "Orion Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Pioneer Industries": [
+        "certification",
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ],
+      "Harbinger Engineering": [
+        "material",
+        "quantity",
+        "price",
+        "delivery_days"
+      ]
+    },
+    "expected_abstention": false
+  },
+  "retrieval_tasks": [
+    {
+      "id": "retr-bench-031-0",
+      "query": "Who quoted for Mild steel plate?",
+      "expected_doc_ids": [
+        "quote_orion_industries.pdf",
+        "quote_pioneer_industries.pdf",
+        "quote_harbinger_engineering.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-031-1",
+      "query": "What is the required quantity?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-031-2",
+      "query": "What is the maximum budget?",
+      "expected_doc_ids": [
+        "rfq.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-031-3",
+      "query": "Which certifications are mandatory?",
+      "expected_doc_ids": [
+        "rfq.pdf",
+        "policy.pdf"
+      ]
+    },
+    {
+      "id": "retr-bench-031-4",
+      "query": "Delivery commitment of Orion Industries",
+      "expected_doc_ids": [
+        "quote_orion_industries.pdf"
+      ]
+    }
+  ],
+  "public_seeds": [
+    "wb-pink-sheet",
+    "ted-open-data-service"
+  ]
+}
